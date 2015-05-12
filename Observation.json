@@ -19,10 +19,9 @@
       "title": "dateTimeInstant",
       "type": "object",
       "properties": {
-        "instant" { "type": "string", "format" : "date-time" }
+        "instant" : { "type": "string", "format" : "date-time" }
       }
     }
-
   },
 	"properties":{
 				"phenomenonTime":{
