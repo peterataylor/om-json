@@ -4,18 +4,36 @@
 	"title":"Observation",
 	"description":"An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
 	"type":"object",
-  "required" : ["phenomenonTime"],
+  "required" : ["phenomenonTime", "observedProperty", "procedure", "featureOfInterest", "resultTime"],
+  "definitions" : {
+    "dateTimePeriod" : {
+      "title": "dateTimePeriod",
+      "type": "object",
+      "required" : ["begin", "end"],
+      "properties": {
+        "begin" { "type": "string", "format" : "date-time" },
+        "end" { "type": "string", "format" : "date-time" }
+      }
+    },
+    "dateTimeInstant" : {
+      "title": "dateTimeInstant",
+      "type": "object",
+      "properties": {
+        "instant" { "type": "string", "format" : "date-time" }
+      }
+    }
+
+  },
 	"properties":{
 				"phenomenonTime":{
 					"title":"phenomenonTime",
 					"description":"Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
-					"type":"string",
-					"format":"date-time"
+					"type":"object",
+					"oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#definitions/dateTimeInstant" } ]
 				},
 				"observedProperty":{
 					"title":"observedProperty",
 					"description":"property whose value is the result of the observation",
-					"required":true,
 					"type":"string",
 					"format":"uri"
 				},
