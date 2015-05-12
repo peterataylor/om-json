@@ -4,13 +4,13 @@
 	"title":"Observation",
 	"description":"An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
 	"type":"object",
+  "required" : ["phenomenonTime"],
 	"properties":{
 				"phenomenonTime":{
 					"title":"phenomenonTime",
 					"description":"Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
 					"type":"string",
 					"format":"date-time",
-					"required":true
 				},
 				"observedProperty":{
 					"title":"observedProperty",
@@ -23,22 +23,19 @@
 					"title":"procedure",
 					"description":"procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure.",
 					"type":"string",
-					"format":"uri",
-					"required":true
+					"format":"uri"
 				},
 				"featureOfInterest":{
 					"title":"featureOfInterest",
 					"description":"time at which the result became available, after all processing steps were completed",
 					"type":"string",
-					"format":"date-time",
-					"required":true
+					"format":"uri"
 				},
 				"resultTime":{
 					"title":"phenomenonTime",
 					"description":"Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
 					"type":"string",
-					"format":"date-time",
-					"required":true
+					"format":"date-time"
 				},
 				"relatedObservation":{
 					"title":"relatedObservation",
@@ -48,13 +45,6 @@
             "role" : { "type" : "string", "format":"uri" },
             "relatedObservation" : { "type" : "string", "format":"uri" }
           }
-				},
-				"result":{
-					"title":"result",
-					"description":"estimate of the value of the observed property",
-					"type":"",
-					"required":true
-				}	
-        
+				}
      }
 }
