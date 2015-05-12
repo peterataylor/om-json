@@ -39,6 +39,18 @@
         "properties" : {
           "value" : { "type" : "boolean" }
         }
+      },
+      "temporalResult": {
+        "title" : "temporalResult", 
+        "type" : "object",
+			  "oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
+      },
+      "countResult": {
+        "title" : "countResult", 
+        "type" : "object",
+        "properties" : {
+          "value" : { "type" : "integer" }
+        }
       }
   },
 	"properties":{
@@ -85,7 +97,10 @@
           "title": "result",
           "description": "result of the observation",
           "type": "object",
-          "oneOf": [ { "$ref": "#/definitions/measureResult" }, { "$ref":"#/definitions/booleanResult"} ]
+          "oneOf": [ { "$ref":"#/definitions/measureResult" }, 
+                     { "$ref":"#/definitions/booleanResult"  },
+                     { "$ref":"#/definitions/countResult"  },
+                     { "$ref":"#/definitions/temporalResult"} ]
         }
      }
 }
