@@ -11,8 +11,8 @@
       "type": "object",
       "required" : ["begin", "end"],
       "properties": {
-        "begin" { "type": "string", "format" : "date-time" },
-        "end" { "type": "string", "format" : "date-time" }
+        "begin" : { "type": "string", "format" : "date-time" },
+        "end" : { "type": "string", "format" : "date-time" }
       }
     },
     "dateTimeInstant" : {
