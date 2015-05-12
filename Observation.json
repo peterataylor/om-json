@@ -18,11 +18,28 @@
     "dateTimeInstant" : {
       "title": "dateTimeInstant",
       "type": "object",
-      "required": "instant",
+      "required": ["instant"],
       "properties": {
         "instant" : { "type": "string", "format" : "date-time" }
       }
-    }
+    },
+      "measureResult": {
+        "title" : "measureResult", 
+        "type" : "object",
+        "required": ["value", "uom"],
+        "properties" : {
+          "value" : { "type" : "number" },
+          "uom" : { "type" : "string" }
+        }
+      },
+      "booleanResult": {
+        "title" : "booleanResult", 
+        "type" : "object",
+        "required": ["value"],
+        "properties" : {
+          "value" : { "type" : "boolean" }
+        }
+      }
   },
 	"properties":{
 				"phenomenonTime":{
@@ -63,6 +80,12 @@
             "role" : { "type" : "string", "format":"uri" },
             "relatedObservation" : { "type" : "string", "format":"uri" }
           }
-				}
+				},
+        "result" : {
+          "title": "result",
+          "description": "result of the observation",
+          "type": "object",
+          "oneOf": [ { "$ref": "#/definitions/measureResult" }, { "$ref":"#/definitions/booleanResult"} ]
+        }
      }
 }
