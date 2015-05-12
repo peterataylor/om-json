@@ -10,7 +10,7 @@
 					"title":"phenomenonTime",
 					"description":"Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
 					"type":"string",
-					"format":"date-time",
+					"format":"date-time"
 				},
 				"observedProperty":{
 					"title":"observedProperty",
