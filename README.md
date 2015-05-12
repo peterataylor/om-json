@@ -7,5 +7,5 @@ Main observation schema: [Observation](https://stash.csiro.au/projects/WML/repos
 ## Tools
 
   * Very handy online validation of instances against schema: http://jsonschemalint.com/ (although lacks good errors for linked schemas)
-  * JSONLint jsonlint.com
+  * [JSONLint](http://jsonlint.com)
   * Guide to authoring JSON schema: http://spacetelescope.github.io/understanding-json-schema/, specifically http://spacetelescope.github.io/understanding-json-schema/structuring.html#structuring
