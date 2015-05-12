@@ -18,6 +18,7 @@
     "dateTimeInstant" : {
       "title": "dateTimeInstant",
       "type": "object",
+      "required": "instant",
       "properties": {
         "instant" : { "type": "string", "format" : "date-time" }
       }
@@ -28,7 +29,7 @@
 					"title":"phenomenonTime",
 					"description":"Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
 					"type":"object",
-					"oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#definitions/dateTimeInstant" } ]
+					"oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
 				},
 				"observedProperty":{
 					"title":"observedProperty",
