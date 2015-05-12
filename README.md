@@ -10,7 +10,7 @@ Main observation schema: [Observation](https://stash.csiro.au/projects/WML/repos
   * [JSONLint](http://jsonlint.com)
   * Guide to authoring JSON schema: http://spacetelescope.github.io/understanding-json-schema/, specifically http://spacetelescope.github.io/understanding-json-schema/structuring.html#structuring
 
-  ## TODOs
+## TODOs
 
   * GeoJSON validation is not yet working. Need this for GeometryObservations
   * Timseries support (i.e. timeseriesML)
