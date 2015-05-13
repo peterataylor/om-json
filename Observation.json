@@ -44,7 +44,7 @@
       "linkOrObject": {
         "title" : "linkOrObject", 
         "type" : "object",
-			  "oneOf": [ { "$ref": "#/definitions/link" } ]
+			  "oneOf": [ { "$ref": "#/definitions/link" }, { "type": "object"} ]
       },
       "booleanResult": {
         "title" : "booleanResult", 
@@ -122,7 +122,6 @@
           "oneOf": [ { "$ref":"#/definitions/measureResult" }, 
                      { "$ref":"#/definitions/booleanResult"  },
                      { "$ref":"#/definitions/countResult"  },
-                     { "$ref":"#/definitions/geometryResult"  },
                      { "$ref":"#/definitions/temporalResult"} ]
         }
      }
