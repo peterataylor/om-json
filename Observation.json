@@ -90,7 +90,7 @@
 					"description":"procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
 				},
 				"featureOfInterest":{
-          "$ref": "#/definitions/link",
+          "$ref": "#/definitions/linkOrObject",
 					"title":"featureOfInterest",
 					"description":"time at which the result became available, after all processing steps were completed"
 				},
