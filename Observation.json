@@ -32,6 +32,15 @@
           "uom" : { "type" : "string" }
         }
       },
+      "link": {
+        "title" : "link", 
+        "type" : "object",
+        "required": ["href"],
+        "properties" : {
+          "href" : { "type" : "string", "format":"uri" },
+          "rel" : { "type" : "string", "format":"uri" }
+        }
+      },
       "booleanResult": {
         "title" : "booleanResult", 
         "type" : "object",
@@ -72,14 +81,19 @@
 					"format":"uri"
 				},
 				"procedure":{
+          "$ref": "#/definitions/link",
 					"title":"procedure",
-					"description":"procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure.",
-					"type":"string",
-					"format":"uri"
+					"description":"procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
 				},
 				"featureOfInterest":{
 					"title":"featureOfInterest",
 					"description":"time at which the result became available, after all processing steps were completed",
+					"type":"string",
+					"format":"uri"
+				},
+				"type":{
+					"title":"type",
+					"description":"Identifies the type of observation, which determines the type of the result property",
 					"type":"string",
 					"format":"uri"
 				},
