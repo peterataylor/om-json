@@ -41,6 +41,11 @@
           "rel" : { "type" : "string", "format":"uri" }
         }
       },
+      "linkOrObject": {
+        "title" : "linkOrObject", 
+        "type" : "object",
+			  "oneOf": [ { "$ref": "#/definitions/link" } ]
+      },
       "booleanResult": {
         "title" : "booleanResult", 
         "type" : "object",
@@ -77,8 +82,7 @@
 				"observedProperty":{
 					"title":"observedProperty",
 					"description":"property whose value is the result of the observation",
-					"type":"string",
-					"format":"uri"
+          "$ref": "#/definitions/link"
 				},
 				"procedure":{
           "$ref": "#/definitions/link",
@@ -86,10 +90,9 @@
 					"description":"procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
 				},
 				"featureOfInterest":{
+          "$ref": "#/definitions/link",
 					"title":"featureOfInterest",
-					"description":"time at which the result became available, after all processing steps were completed",
-					"type":"string",
-					"format":"uri"
+					"description":"time at which the result became available, after all processing steps were completed"
 				},
 				"type":{
 					"title":"type",
