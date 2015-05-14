@@ -17,5 +17,6 @@ Main observation schema: [Observation](https://stash.csiro.au/projects/WML/repos
   * GeoJSON validation is not yet working. Need this for GeometryObservations
   * Timseries support (i.e. timeseriesML)
   * Gregorian time instants (gYearMonth etc.)
-  * Improve partitioning of schema (currently in one schema file)
+  * Improve partitioning of schema (currently each in one schema file, with cloned sections)
+  * ?replace role/relatedObservation with standard links rel/href?
   * Online validator 
