@@ -9,7 +9,7 @@
     "dateTimePeriod" : {
       "title": "dateTimePeriod",
       "type": "object",
-      "required" : ["begin", "end"],
+# for single-ended periods either of these may be omitted. So delete this line?       "required" : ["begin", "end"],
       "properties": {
         "begin" : { "type": "string", "format" : "date-time" },
         "end" : { "type": "string", "format" : "date-time" }
@@ -23,55 +23,60 @@
         "instant" : { "type": "string", "format" : "date-time" }
       }
     },
-      "measureResult": {
-        "title" : "measureResult", 
-        "type" : "object",
-        "required": ["value", "uom"],
-        "properties" : {
-          "value" : { "type" : "number" },
-          "uom" : { "type" : "string" }
-        }
-      },
-      "link": {
-        "title" : "link", 
-        "type" : "object",
-        "required": ["href"],
-        "properties" : {
-          "href" : { "type" : "string", "format":"uri" },
-          "rel" : { "type" : "string", "format":"uri" },
-          "title" : { "type" : "string" }
-        }
-      },
-      "linkOrObject": {
+    "date" : {
+      "title": "date",
+      "type": "string",
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+    },
+    "measureResult": {
+      "title" : "measureResult", 
+      "type" : "object",
+      "required": ["value", "uom"],
+      "properties" : {
+        "value" : { "type" : "number" },
+        "uom" : { "type" : "string" }
+      }
+    },
+    "link": {
+      "title" : "link", 
+      "type" : "object",
+      "required": ["href"],
+      "properties" : {
+        "href" : { "type" : "string", "format":"uri" },
+        "rel" : { "type" : "string", "format":"uri" },
+        "title" : { "type" : "string" }
+      }
+    },
+    "linkOrObject": {
         "title" : "linkOrObject", 
         "type" : "object",
 			  "oneOf": [ { "$ref": "#/definitions/link" }, { "type": "object"} ]
-      },
-      "booleanResult": {
-        "title" : "booleanResult", 
-        "type" : "object",
-        "required": ["value"],
-        "properties" : {
-          "value" : { "type" : "boolean" }
-        }
-      },
-      "temporalResult": {
-        "title" : "temporalResult", 
-        "type" : "object",
-			  "oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
-      },
-      "countResult": {
-        "title" : "countResult", 
-        "type" : "object",
-        "properties" : {
-          "value" : { "type" : "integer" }
-        }
-      },
-      "geometryResult": {
-        "title" : "geometryResult", 
-        "type" : "object",
-			  "oneOf": [ { "$ref": "geometry.json" } ]
+    },
+    "booleanResult": {
+      "title" : "booleanResult", 
+      "type" : "object",
+      "required": ["value"],
+      "properties" : {
+        "value" : { "type" : "boolean" }
       }
+    },
+    "temporalResult": {
+      "title" : "temporalResult", 
+      "type" : "object",
+			  "oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
+    },
+    "countResult": {
+      "title" : "countResult", 
+      "type" : "object",
+      "properties" : {
+        "value" : { "type" : "integer" }
+      }
+    },
+    "geometryResult": {
+      "title" : "geometryResult", 
+      "type" : "object",
+	  "oneOf": [ { "$ref": "geometry.json" } ]
+    }
   },
 	"properties":{
 				"phenomenonTime":{
