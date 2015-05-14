@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://waterml2.csiro.au/om-json/observation-collection.json",
+  "title": "Observation collection",
+  "description": "Collection of observations which may have a common (a) feature of interest (b) observed property (c) observation procedure.",
+  "type": "object",
+  "required": [
+    "id",
+    "member"
+  ],
+  "definitions": {
+    "link": {
+      "title": "link",
+      "type": "object",
+      "required": [
+        "href"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "rel": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "linkOrObject": {
+      "title": "linkOrObject",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/link"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "id": {
+      "title": "id",
+      "description": "A unique identifier for the observation collection",
+      "type": "string"
+    },
+    "featureOfInterest": {
+      "$ref": "#/definitions/linkOrObject",
+      "title": "featureOfInterest",
+      "description": "the single feature which all observations in the collection are concerned with"
+    },
+    "procedure": {
+      "$ref": "#/definitions/linkOrObject",
+      "title": "featureOfInterest",
+      "description": "the observation procedure used in all observations in the collection"
+    },
+    "observedProperty": {
+      "$ref": "#/definitions/linkOrObject",
+      "title": "observedProperty",
+      "description": "the property measured or estimated by all observations in the collection"
+    },
+    "member": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/link"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "member",
+      "description": "Member of this observation collection"
+    }
+  }
+}
