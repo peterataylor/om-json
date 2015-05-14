@@ -42,7 +42,7 @@
     "new-date-time" : {
         "title": "new-date-time",
         "type": "object",
-        "oneOf": [ { "type":"string", "format":"date-time"}, 
+        "anyOf": [ { "type":"string", "format":"date-time"}, 
                      { "$ref":"#/definitions/date"  },
                      { "$ref":"#/definitions/g-year-month"  },
                      { "$ref":"#/definitions/g-year"} ]
