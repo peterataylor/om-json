@@ -9,9 +9,10 @@
     "dateTimePeriod" : {
       "title": "dateTimePeriod",
       "type": "object",
-# for single-ended periods either of these may be omitted. So delete this line?       "required" : ["begin", "end"],
+# for single-ended periods either may be omitted. So delete next line?
+      "required" : ["begin", "end"],
       "properties": {
-        "begin" : { "type": "string", "format" : "date-time" },
+        "begin" : { "type": "string", "format" : "date-time" }, 
         "end" : { "type": "string", "format" : "date-time" }
       }
     },
@@ -23,6 +24,7 @@
         "instant" : { "type": "string", "format" : "date-time" }
       }
     },
+# does this work to declare reusable string patterns?
     "date" : {
       "title": "date",
       "type": "string",
@@ -37,6 +39,16 @@
       "title": "g-year",
       "type": "string",
       "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+    },
+# cleaner attempt to define oneOf over string patterns
+    "new-date-time" : {
+        "title": "new-date-time",
+        "type": {
+          "oneOf": [ "date-time", 
+                     { "$ref":"#/date"  },
+                     { "$ref":"#/g-year-month"  },
+                     { "$ref":"#/g-year"} ]
+        }
     },
     "measureResult": {
       "title" : "measureResult", 
