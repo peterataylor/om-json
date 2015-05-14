@@ -16,12 +16,10 @@
       "additionalProperties": false,
       "properties": {
         "begin": {
-          "type": "string",
-          "format": "date-time"
+          "$ref": "#/definitions/new-date-time"
         },
         "end": {
-          "type": "string",
-          "format": "date-time"
+          "$ref": "#/definitions/new-date-time"
         }
       }
     },
@@ -72,6 +70,39 @@
         }
       ]
     },
+    "duration": {
+      "title": "duration",
+      "type": "string",
+      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
+    },
+    "measure": {
+      "title": "measure",
+      "type": "object",
+      "required": [
+        "value",
+        "uom"
+      ],
+    "new-duration": {
+      "title": "new-duration",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/duration"
+        },
+        {
+          "$ref": "#/definitions/measure"
+        }
+      ]
+    },
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "uom": {
+          "type": "string"
+        }
+      }
+    },
     "link": {
       "title": "link",
       "type": "object",
@@ -104,22 +135,6 @@
         }
       ]
     },
-    "measure": {
-      "title": "measure",
-      "type": "object",
-      "required": [
-        "value",
-        "uom"
-      ],
-      "properties": {
-        "value": {
-          "type": "number"
-        },
-        "uom": {
-          "type": "string"
-        }
-      }
-    },
     "boolean": {
       "title": "boolean",
       "type": "object",
@@ -141,6 +156,9 @@
         },
         {
           "$ref": "#/definitions/dateTimeInstant"
+        },
+        {
+          "$ref": "#/definitions/duration"         
         }
       ]
     },
