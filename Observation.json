@@ -21,7 +21,7 @@
       "required": ["instant"],
       "additionalProperties":false,
       "properties": {
-        "instant" : { "type": "string", "format" : "date-time" }
+        "instant" : { "$ref": "#/definitions/new-date-time" }
       }
     },
     "date" : {
@@ -41,12 +41,11 @@
     },
     "new-date-time" : {
         "title": "new-date-time",
-        "type": {
-          "oneOf": [ "date-time", 
-                     { "$ref":"#/date"  },
-                     { "$ref":"#/g-year-month"  },
-                     { "$ref":"#/g-year"} ]
-        }
+        "type": "object",
+        "oneOf": [ { "type":"string", "format":"date-time"}, 
+                     { "$ref":"#/definitions/date"  },
+                     { "$ref":"#/definitions/g-year-month"  },
+                     { "$ref":"#/definitions/g-year"} ]
     },
     "measureResult": {
       "title" : "measureResult", 
