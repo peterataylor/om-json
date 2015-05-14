@@ -1,12 +1,13 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "http://waterml2.csiro.au/om-json/specimen.json",
-  "title": "Specimen",
-  "description": "  ## EXTENDS SAMPLING FEATURE - DONE HERE BY CLONING ##  A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory.",
+  "id": "http://waterml2.csiro.au/om-json/spatial-sampling.json",
+  "title": "Spatial Sampling Feature",
+  "description": "  ## EXTENDS SAMPLING FEATURE - DONE HERE BY CLONING ##  Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting. ",
   "type": "object",
   "required": [
     "id",
-    "samplingTime"
+    "type",
+    "shape"
   ],
   "definitions": {
     "dateTimePeriod": {
@@ -150,52 +151,25 @@
         }
       }
     },
-    "samplingTime": {
-      "title": "samplingTime",
-      "description": "time the specimen was taken from the sampled feature",
+    "type": {
+      "title": "type",
+      "description": "Identifies the type of spatial sampling feature, which determines the type of the shape property",
+      "type": "string",
+      "format": "uri"
+    },
+    "shape": {
+      "title": "shape",
+      "description": "Spatial location and extent of the sampling feature",
       "type": "object",
-      "oneOf": [
-        {
-          "$ref": "#/definitions/dateTimePeriod"
-        },
-        {
-          "$ref": "#/definitions/dateTimeInstant"
-        }
-      ]
+      "$ref": "#/definitions/geometryObject"
     },
-    "samplingMethod": {
-      "$ref": "#/definitions/link",
-      "title": "samplingMethod",
-      "description": "Process used to take the specimen from the sampled feature."
-    },
-    "samplingLocation": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/link"
-        },
-        {
-          "$ref": "#/definitions/geometryObject"
-        }
-      ],
-      "title": "samplingLocation",
-      "description": "Location from which the specimen was taken within the sampled feature"
-    },
-    "currentLocation": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/link"
-        },
-        {
-          "$ref": "#/definitions/text"
-        }
-      ],
-      "title": "currentLocation",
-      "description": "Location where the specimen is currently"
-    },
-    "size": {
-      "title": "size",
-      "description": "Physical extent of the specimen (length, mass, etc)",
-      "$ref": "#/definitions/measure"
+    "hostedProcedure": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/link"
+      },
+      "title": "hostedProcedure",
+      "description": "Observation procedure (instrument, sensor, observer) associated with or hosted by this spatial sampling feature."
     }
   }
 }

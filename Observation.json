@@ -1,180 +1,276 @@
 {
-	"$schema":"http://json-schema.org/schema#",
-	"id":"http://waterml2.csiro.au/om-json/observation.json",
-	"title":"Observation",
-	"description":"An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
-	"type":"object",
-	"required" : ["id","phenomenonTime", "result"],
-	"definitions" : {
-		"dateTimePeriod" : {
-				"title": "dateTimePeriod",
-				"type": "object",
-				"additionalProperties":false,
-				"properties": {
-					"begin" : { "type": "string", "format" : "date-time" }, 
-					"end" : { "type": "string", "format" : "date-time" }
-				}
-		},
-		"dateTimeInstant" : {
-				"title": "dateTimeInstant",
-				"type": "object",
-				"required": ["instant"],
-				"additionalProperties":false,
-				"properties": {
-                    "instant" : { "$ref": "#/definitions/new-date-time" }
-				}
-		},
-		"date" : {
-				"title": "date",
-				"type": "string",
-				"pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-		},
-		"g-year-month" : {
-				"title": "g-year-month",
-				"type": "string",
-				"pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-		},
-		"g-year" : {
-				"title": "g-year",
-				"type": "string",
-				"pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-		},
-        "new-date-time" : {
-            "title": "new-date-time",
-            "type": "object",
-            "anyOf": [ { "type":"string", "format":"date-time"}, 
-                     { "$ref":"#/definitions/date"  },
-                     { "$ref":"#/definitions/g-year-month"  },
-                     { "$ref":"#/definitions/g-year"} ]
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://waterml2.csiro.au/om-json/observation.json",
+  "title": "Observation",
+  "description": "An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
+  "type": "object",
+  "required": [
+    "id",
+    "phenomenonTime",
+    "result"
+  ],
+  "definitions": {
+    "dateTimePeriod": {
+      "title": "dateTimePeriod",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "begin": {
+          "type": "string",
+          "format": "date-time"
         },
-		"link": {
-				"title" : "link", 
-				"type" : "object",
-				"required": ["href"],
-				"properties" : {
-					"href" : { "type" : "string", "format":"uri" },
-					"rel" : { "type" : "string", "format":"uri" },
-					"title" : { "type" : "string" }
-				}
-		},
-		"linkOrObject": {
-				"title" : "linkOrObject", 
-				"type" : "object",
-	  		"oneOf": [ { "$ref": "#/definitions/link" }, { "type": "object"} ]
-		},
-		"measure": {
-				"title" : "measure", 
-				"type" : "object",
-				"required": ["value", "uom"],
-				"properties" : {
-					"value" : { "type" : "number" },
-					"uom" : { "type" : "string" }
-				}
-		},
-		"booleanValue": {
-				"title" : "booleanResult", 
-				"type" : "object",
-				"required": ["value"],
-				"properties" : {
-					"value" : { "type" : "boolean" }
-				 }
-		},
-		"temporalObject": {
-				"title" : "temporalResult", 
-				"type" : "object",
-	  		   "oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
-		},
-		"count": {
-				"title" : "countResult", 
-				"type" : "object",
-				"properties" : {
-					"value" : { "type" : "integer" }
-				}
-		},
-		"textValue": {
-				"title" : "textResult", 
-				"type" : "object",
-				"properties" : {
-					"value" : { "type" : "string" }
-				}
-		},
-		"linkResult": {
-				"title" : "linkResult", 
-				"type" : "object",
-	  		"oneOf": [ { "$ref": "#/definitions/link" } ]
-		},
-		"geometry": {
-				"title" : "geometryResult", 
-				"type" : "object",
-	  		   "oneOf": [ { "$ref": "https://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json" } ]
-		}
-	},
-	"properties":{
-	   "id":{
-	       "title":"id",
-	       "description":"A unique identifier for the observation",
-	       "type":"string"
-	   },
-		"phenomenonTime":{
-			"title":"phenomenonTime",
-			"description":"Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
-			"type":"object",
-			"oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
-		},
-		"observedProperty":{
-			"title":"observedProperty",
-			"description":"property whose value is the result of the observation",
-			"$ref": "#/definitions/link"
-		},
-		"procedure":{
-			"$ref": "#/definitions/link",
-			"title":"procedure",
-			"description":"procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
-		},
-		"featureOfInterest":{
-			"$ref": "#/definitions/linkOrObject",
-			"title":"featureOfInterest",
-			"description":"subject of the observation, whose type may carry the observed property"
-		},
-		"samplingStrategy":{
-			"$ref": "#/definitions/linkOrObject",
-			"title":"samplingStrategy",
-			"description":"a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest"
-		},
-		"type":{
-			"title":"type",
-			"description":"Identifies the type of observation, which determines the type of the result property",
-			"type":"string",
-			"format":"uri"
-		},
-		"resultTime":{
-			"title":"resultTime",
-			"description":"time at which the result became available, after all processing steps were completed",
-			"type":"string",
-			"format":"date-time"
-		},
-		"context":{
-			"title":"context",
-			"description":"links to observations that provide the context for this observation - THIS SHOULD HAVE AN ARRAY OF VALUES ",
-			"type":"object",
-			"properties": { 
-		  	   "role" : { "type" : "string", "format":"uri" },
-		  	   "relatedObservation" : { "type" : "string", "format":"uri" }
-			}
-		},
-		"result" : {
-			"title": "result",
-			"description": "result of the observation",
-			"type": "object",
-			"oneOf": [ 
-			     { "$ref":"#/definitions/measure" }, 
-				 { "$ref":"#/definitions/textValue"  },
-				 { "$ref":"#/definitions/booleanValue"  },
-				 { "$ref":"#/definitions/count"  },
-				 { "$ref":"#/definitions/geometry"  },
-				 { "$ref":"#/definitions/temporalObject"} ,
-				 { "$ref":"#/definitions/linkResult"  } 
-				 ]
-		}
-	}
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "dateTimeInstant": {
+      "title": "dateTimeInstant",
+      "type": "object",
+      "required": [
+        "instant"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "instant": {
+          "$ref": "#/definitions/new-date-time"
+        }
+      }
+    },
+    "date": {
+      "title": "date",
+      "type": "string",
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+    },
+    "g-year-month": {
+      "title": "g-year-month",
+      "type": "string",
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+    },
+    "g-year": {
+      "title": "g-year",
+      "type": "string",
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+    },
+    "new-date-time": {
+      "title": "new-date-time",
+      "type": "object",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "$ref": "#/definitions/date"
+        },
+        {
+          "$ref": "#/definitions/g-year-month"
+        },
+        {
+          "$ref": "#/definitions/g-year"
+        }
+      ]
+    },
+    "link": {
+      "title": "link",
+      "type": "object",
+      "required": [
+        "href"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "rel": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "linkOrObject": {
+      "title": "linkOrObject",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/link"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "measure": {
+      "title": "measure",
+      "type": "object",
+      "required": [
+        "value",
+        "uom"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "uom": {
+          "type": "string"
+        }
+      }
+    },
+    "boolean": {
+      "title": "boolean",
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "temporalObject": {
+      "title": "temporalObject",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/dateTimePeriod"
+        },
+        {
+          "$ref": "#/definitions/dateTimeInstant"
+        }
+      ]
+    },
+    "count": {
+      "title": "count",
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "integer"
+        }
+      }
+    },
+    "text": {
+      "title": "text",
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "geometryObject": {
+      "title": "geometryObject",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "https://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "id": {
+      "title": "id",
+      "description": "A unique identifier for the observation",
+      "type": "string"
+    },
+    "phenomenonTime": {
+      "title": "phenomenonTime",
+      "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/dateTimePeriod"
+        },
+        {
+          "$ref": "#/definitions/dateTimeInstant"
+        }
+      ]
+    },
+    "observedProperty": {
+      "title": "observedProperty",
+      "description": "property whose value is the result of the observation",
+      "$ref": "#/definitions/link"
+    },
+    "procedure": {
+      "$ref": "#/definitions/link",
+      "title": "procedure",
+      "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
+    },
+    "featureOfInterest": {
+      "$ref": "#/definitions/linkOrObject",
+      "title": "featureOfInterest",
+      "description": "subject of the observation, whose type may carry the observed property"
+    },
+    "samplingStrategy": {
+      "$ref": "#/definitions/linkOrObject",
+      "title": "samplingStrategy",
+      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest"
+    },
+    "type": {
+      "title": "type",
+      "description": "Identifies the type of observation, which determines the type of the result property",
+      "type": "string",
+      "format": "uri"
+    },
+    "resultTime": {
+      "title": "resultTime",
+      "description": "time at which the result became available, after all processing steps were completed",
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "title": "context",
+      "description": "links to observations that provide the context for this observation - THIS SHOULD HAVE AN ARRAY OF VALUES ",
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "format": "uri"
+        },
+        "relatedObservation": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "result": {
+      "title": "result",
+      "description": "result of the observation",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/measure"
+        },
+        {
+          "$ref": "#/definitions/text"
+        },
+        {
+          "$ref": "#/definitions/boolean"
+        },
+        {
+          "$ref": "#/definitions/count"
+        },
+        {
+          "$ref": "#/definitions/geometryObject"
+        },
+        {
+          "$ref": "#/definitions/temporalObject"
+        },
+        {
+          "$ref": "#/definitions/link"
+        }
+      ]
+    }
+  }
 }

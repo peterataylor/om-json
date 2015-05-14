@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://waterml2.csiro.au/om-json/sampling-collection.json",
+  "title": "Sampling feature collection",
+  "description": "Collection of features on which observations may be made.",
+  "type": "object",
+  "required": [
+    "id",
+    "member"
+  ],
+  "definitions": {
+    "link": {
+      "title": "link",
+      "type": "object",
+      "required": [
+        "href"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "rel": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "linkOrObject": {
+      "title": "linkOrObject",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/link"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "id": {
+      "title": "id",
+      "description": "A unique identifier for the sampling feature collection",
+      "type": "string"
+    },
+    "sampledFeature": {
+      "$ref": "#/definitions/linkOrObject",
+      "title": "sampledFeature",
+      "description": "the feature which the sampling feature collection was designed to sample"
+    },
+    "member": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/link"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "member",
+      "description": "Member of this sampling feature collection"
+    }
+  }
+}

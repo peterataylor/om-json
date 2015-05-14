@@ -1,0 +1,55 @@
+{
+  "id": "sample1",
+  "sampledFeature": {
+    "href": "http://example.org/featureA",
+    "title": "test feature A"
+  },
+  "complex": [
+    {
+      "role": "http://example.org/parent",
+      "relatedSamplingFeature": "http://example.org/sample2"
+    },
+    {
+      "role": "http://example.org/child",
+      "relatedSamplingFeature": "http://example.org/sample3"
+    }
+  ],
+  "samplingTime": {
+    "instant": "2015-05-14T15:15:15.00Z"
+  },
+  "relatedObservation": [
+    {
+      "href": "http://example.org/obs99"
+    }
+  ],
+  "samplingLocation": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -180,
+          10
+        ],
+        [
+          20,
+          90
+        ],
+        [
+          180,
+          -5
+        ],
+        [
+          -30,
+          -90
+        ]
+      ]
+    ]
+  },
+  "currentLocation": {
+    "value": "bottom drawer"
+  },
+  "size": {
+    "value": 23.1,
+    "uom": "http://www.opengis.net/def/uom/ogc/0/m"
+  }
+}

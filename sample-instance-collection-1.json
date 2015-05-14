@@ -1,0 +1,15 @@
+{
+  "id": "sampling feature collection 77",
+  "member": [
+    {
+      "href": "http://example.org/sample23"
+    },
+    {
+      "href": "http://example.org/sample47"
+    }
+  ],
+  "sampledFeature": {
+    "href": "http://example.org/feature45",
+    "title": "Derwent River"
+  }
+}

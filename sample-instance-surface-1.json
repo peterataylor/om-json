@@ -1,0 +1,49 @@
+{
+  "id": "sample1",
+  "sampledFeature": {
+    "href": "http://example.org/featureA",
+    "title": "test feature A"
+  },
+  "complex": [
+    {
+      "role": "http://example.org/parent",
+      "relatedSamplingFeature": "http://example.org/sample2"
+    },
+    {
+      "role": "http://example.org/child",
+      "relatedSamplingFeature": "http://example.org/sample3"
+    }
+  ],
+  "shape": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -180,
+          10
+        ],
+        [
+          20,
+          90
+        ],
+        [
+          180,
+          -5
+        ],
+        [
+          -30,
+          -90
+        ]
+      ]
+    ]
+  },
+  "type": "http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingSurface",
+  "hostedProcedure": [
+    {
+      "href": "http://example.org/sensor99"
+    },
+    {
+      "href": "http://example.org/observer98"
+    }
+  ]
+}
