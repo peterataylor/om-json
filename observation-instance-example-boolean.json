@@ -1,10 +1,11 @@
 {
-  "phenomenonTime": "2011-05-11T00:00:00+10:00",
-  "observedProperty": "http://environment.data.gov.au/def/property/pH_water",
-  "procedure": "http://www.opengis.net/def/waterml/2.0/processType/Sensor",
+  "type": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TruthObservation" },
+  "phenomenonTime": { "instant":"2011-05-11T00:00:00+10:00" },
+  "observedProperty": "urn:example:Truth",
+  "procedure": "http://www.opengis.net/def/waterml/2.0/processType/Manual",
   "featureOfInterest": "waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/",
   "resultTime": "2011-05-12T09:00:00+10:00",
   "result": {
-      "value": true
-    }
+    "value": true
+  }
 }

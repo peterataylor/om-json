@@ -1,0 +1,13 @@
+{
+  "phenomenonTime": { "instant":"2011-05-11T00:00:00+10:00"},
+  "observedProperty": { "href":"http://environment.data.gov.au/def/property/shape"},
+  "procedure": { "href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
+  "featureOfInterest": { "href":"http://environment.data.gov.au/water/id/catchment/100862", "title":"Observed catchment"},
+  "resultTime": "2011-05-12T00:00:00+10:00",
+  "result": {
+    "type": "Polygon",
+    "coordinates" : [[
+        [-180.0, 10.0], [20.0, 90.0], [180.0, -5.0], [-30.0, -90.0]
+        ]]
+    }
+}
