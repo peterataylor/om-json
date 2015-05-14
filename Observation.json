@@ -9,8 +9,7 @@
     "dateTimePeriod" : {
       "title": "dateTimePeriod",
       "type": "object",
-# for single-ended periods either may be omitted. So delete next line?
-      "required" : ["begin", "end"],
+      "additionalProperties":false,
       "properties": {
         "begin" : { "type": "string", "format" : "date-time" }, 
         "end" : { "type": "string", "format" : "date-time" }
@@ -20,27 +19,26 @@
       "title": "dateTimeInstant",
       "type": "object",
       "required": ["instant"],
+      "additionalProperties":false,
       "properties": {
         "instant" : { "type": "string", "format" : "date-time" }
       }
     },
-# does this work to declare reusable string patterns?
     "date" : {
       "title": "date",
       "type": "string",
-      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
     },
     "g-year-month" : {
       "title": "g-year-month",
       "type": "string",
-      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
     },
     "g-year" : {
       "title": "g-year",
       "type": "string",
-      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
     },
-# cleaner attempt to define oneOf over string patterns
     "new-date-time" : {
         "title": "new-date-time",
         "type": {
@@ -86,7 +84,7 @@
       "title" : "temporalResult", 
       "type" : "object",
 			  "oneOf": [ { "$ref": "#/definitions/dateTimePeriod" }, { "$ref" : "#/definitions/dateTimeInstant" } ]
-    },
+      },
     "countResult": {
       "title" : "countResult", 
       "type" : "object",
@@ -155,6 +153,7 @@
           "oneOf": [ { "$ref":"#/definitions/measureResult" }, 
                      { "$ref":"#/definitions/booleanResult"  },
                      { "$ref":"#/definitions/countResult"  },
+                     { "$ref":"#/definitions/geometryResult"  },
                      { "$ref":"#/definitions/temporalResult"} ]
         }
      }

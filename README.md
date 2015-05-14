@@ -8,6 +8,7 @@ Main observation schema: [Observation](https://stash.csiro.au/projects/WML/repos
 
   * Very handy online validation of instances against schema: http://jsonschemalint.com/ (although lacks good errors for linked schemas)
   * Another online validator that is backed by Java; has slightly better error reporting: http://json-schema-validator.herokuapp.com/index.jsp. 
+  * And another validator, also with better reporting: http://www.jsonschemavalidator.net/
   * [JSONLint](http://jsonlint.com)
   * Guide to authoring JSON schema: http://spacetelescope.github.io/understanding-json-schema/, specifically http://spacetelescope.github.io/understanding-json-schema/structuring.html#structuring
 
