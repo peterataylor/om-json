@@ -1,0 +1,58 @@
+{
+	"$schema":"http://json-schema.org/schema#",
+	"id":"http://waterml2.csiro.au/om-json/sampling.json",
+	"title":"Sampling feature",
+	"description":"Feature on which observations may be made, which is intended to be representative of a different (usually larger) feature that is not fully accessible for some reason.",
+	"type":"object",
+	"required" : ["id"],
+	"definitions" : {
+		"link": {
+				"title" : "link", 
+				"type" : "object",
+				"required": ["href"],
+				"properties" : {
+					"href" : { "type" : "string", "format":"uri" },
+					"rel" : { "type" : "string", "format":"uri" },
+					"title" : { "type" : "string" }
+				}
+		},
+		"linkOrObject": {
+				"title" : "linkOrObject", 
+				"type" : "object",
+	  		"oneOf": [ { "$ref": "#/definitions/link" }, { "type": "object"} ]
+		}
+	},
+	"properties":{
+	   "id":{
+	       "title":"id",
+	       "description":"A unique identifier for the sampling feature",
+	       "type":"string"
+	   },
+		"type":{
+			"title":"type",
+			"description":"Identifies the type of sampling feature, which determines the type of the result property",
+			"type":"string",
+			"format":"uri"
+		},
+		"sampledFeature":{
+			"$ref": "#/definitions/linkOrObject",
+			"title":"sampledFeature",
+			"description":"the feature which the sampling feature was designed to sample"
+		},
+		"relatedObservation":{
+			"type": "string",
+			"format": "uri",
+			"title":"relatedObservation",
+			"description":"Observation that uses this sampling feature"
+		},
+		"complex":{
+			"title":"complex",
+			"description":"link to related sampling features - THIS SHOULD HAVE AN ARRAY OF VALUES ",
+			"type":"object",
+			"properties": { 
+		  	   "role" : { "type" : "string", "format":"uri" },
+		  	   "relatedSamplingFeature" : { "type" : "string", "format":"uri" }
+			}
+		}
+	}
+}
