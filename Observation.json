@@ -38,7 +38,8 @@
         "required": ["href"],
         "properties" : {
           "href" : { "type" : "string", "format":"uri" },
-          "rel" : { "type" : "string", "format":"uri" }
+          "rel" : { "type" : "string", "format":"uri" },
+          "title" : { "type" : "string" }
         }
       },
       "linkOrObject": {
