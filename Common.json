@@ -11,10 +11,10 @@
       "additionalProperties": false,
       "properties": {
         "begin": {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/new-date-time"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTime"
         },
         "end": {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/new-date-time"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTime"
         }
       }
     },
@@ -27,7 +27,7 @@
       "additionalProperties": false,
       "properties": {
         "instant": {
-          "$ref": "#/properties/new-date-time"
+          "$ref": "#/properties/dateTime"
         }
       }
     },
@@ -46,8 +46,8 @@
       "type": "string",
       "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
     },
-    "new-date-time": {
-      "title": "new-date-time",
+    "dateTime": {
+      "title": "dateTime",
       "type": "object",
       "anyOf": [
         {
