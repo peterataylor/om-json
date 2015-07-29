@@ -48,7 +48,7 @@
     },
     "dateTime": {
       "title": "dateTime",
-      "type": "object",
+      "type": "string",
       "anyOf": [
         {
           "type": "string",
