@@ -11,10 +11,10 @@
       "additionalProperties": false,
       "properties": {
         "begin": {
-          "$ref": "#/properties/new-date-time"
+          "$ref": "new-date-time"
         },
         "end": {
-          "$ref": "#/properties/new-date-time"
+          "$ref": "new-date-time"
         }
       }
     },
