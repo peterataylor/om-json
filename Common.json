@@ -11,10 +11,10 @@
       "additionalProperties": false,
       "properties": {
         "begin": {
-          "$ref": "new-date-time"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/new-date-time"
         },
         "end": {
-          "$ref": "new-date-time"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/new-date-time"
         }
       }
     },
