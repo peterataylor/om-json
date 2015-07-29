@@ -11,10 +11,10 @@
       "additionalProperties": false,
       "properties": {
         "begin": {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTime"
+          "$ref": "#/properties/dateTime"
         },
         "end": {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTime"
+          "$ref": "#/properties/dateTime"
         }
       }
     },
