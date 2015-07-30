@@ -26,26 +26,12 @@
       "title": "relatedObservation",
       "description": "Observation that uses this sampling feature"
     },
-    "complex": {
-      "title": "complex",
+    "relatedSamplingFeature": {
+      "title": "relatedSamplingFeature",
       "description": "link to related sampling features",
       "type": "array",
       "items": {
-        "type": "object",
-        "required": [
-          "role",
-          "relatedSamplingFeature"
-        ],
-        "properties": {
-          "role": {
-            "type": "string",
-            "format": "uri"
-          },
-          "relatedSamplingFeature": {
-            "type": "string",
-            "format": "uri"
-          }
-        }
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
       }
     }
   }
