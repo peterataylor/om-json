@@ -19,15 +19,7 @@
     "phenomenonTime": {
       "title": "phenomenonTime",
       "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
-        }
-      ]
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
     },
     "observedProperty": {
       "title": "observedProperty",
