@@ -152,7 +152,7 @@
         },
         {
           "$ref": "#/properties/dateTimeInstant"
-        },
+        }
       ]
     },
     "temporalObject": {
