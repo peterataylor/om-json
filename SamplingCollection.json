@@ -22,7 +22,7 @@
     "member": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
       },
       "minItems": 1,
       "uniqueItems": true,
