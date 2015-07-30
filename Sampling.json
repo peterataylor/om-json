@@ -31,7 +31,7 @@
       "description": "link to related sampling features",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/link"
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
       }
     }
   }
