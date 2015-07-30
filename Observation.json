@@ -4,6 +4,7 @@
   "title": "Observation",
   "description": "An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "id",
     "phenomenonTime",
@@ -31,20 +32,20 @@
     "observedProperty": {
       "title": "observedProperty",
       "description": "property whose value is the result of the observation",
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
     },
     "procedure": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link",
       "title": "procedure",
       "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
     },
     "featureOfInterest": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
       "description": "subject of the observation, whose type may carry the observed property"
     },
     "samplingStrategy": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "samplingStrategy",
       "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest"
     },
@@ -81,25 +82,25 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/boolean"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/boolean"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/count"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/count"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalObject"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalObject"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         }
       ]
     }

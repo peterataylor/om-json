@@ -4,6 +4,7 @@
   "title": "Spatial Sampling Feature",
   "description": "  ## EXTENDS SAMPLING FEATURE - DONE HERE BY CLONING ##  Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting. ",
   "type": "object",
+  "additionalProperies" : false,
   "required": [
     "id",
     "type",

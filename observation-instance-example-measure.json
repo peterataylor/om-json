@@ -4,7 +4,7 @@
   "phenomenonTime": { "instant":"2011-05-11T00:00:00+10:00" },
   "observedProperty": {"href":"http://environment.data.gov.au/def/property/air_temperature"},
   "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
-  "featureOfInterest": {"href":"waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
+  "featureOfInterest": {"href":"http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
   "resultTime": "2011-05-12T09:00:00+10:00",
   "result": {
       "value": 3.2,

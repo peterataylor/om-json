@@ -4,6 +4,7 @@
   "title": "Specimen",
   "description": "  ## EXTENDS SAMPLING FEATURE - DONE HERE BY CLONING ##  A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory.",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "id",
     "samplingTime"
