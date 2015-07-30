@@ -45,7 +45,7 @@
     "dateTime": {
       "title": "dateTime",
       "type": "string",
-      "anyOf": [
+      "oneOf": [
         {
           "$ref": "#/properties/date"
         },
