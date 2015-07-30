@@ -73,18 +73,6 @@
         "value",
         "uom"
       ],
-      "new-duration": {
-        "title": "new-duration",
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/properties/duration"
-          },
-          {
-            "$ref": "#/properties/measure"
-          }
-        ]
-      },
       "properties": {
         "value": {
           "type": "number"
@@ -93,6 +81,18 @@
           "type": "string"
         }
       }
+    },
+    "new-duration": {
+      "title": "new-duration",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/properties/duration"
+        },
+        {
+          "$ref": "#/properties/measure"
+        }
+      ]
     },
     "link": {
       "title": "link",
