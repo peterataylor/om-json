@@ -66,11 +66,12 @@
       "description": "links to observations that provide the context for this observation - THIS SHOULD HAVE AN ARRAY OF VALUES ",
       "type": "array",
       "items": {
-      "properties": {
-        "role": {
-          "type": "string"
-        },
-        "$ref": "#/observation"
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "$ref": "#/observation"
+        }
       }
     },
     "result": {
