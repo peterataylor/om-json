@@ -5,11 +5,7 @@
   "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
   "type": "object",
   "properties": {
-    "dateTimePeriod": {
-      "title": "dateTimePeriod",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
+    "dateTimePeriod": { "title": "dateTimePeriod", "type": "object", "additionalProperties": false, "properties": {
         "begin": {
           "$ref": "#/properties/dateTime"
         },
@@ -50,10 +46,6 @@
       "title": "dateTime",
       "type": "string",
       "anyOf": [
-        {
-          "type": "string",
-          "format": "date-time"
-        },
         {
           "$ref": "#/properties/date"
         },
