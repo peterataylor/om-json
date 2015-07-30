@@ -1,10 +1,11 @@
 {
-  "type": "http://www.opengis.net/def/observationType/OGC- OM/2.0/OM_CountObservation",
-  "phenomenonTime": { "instant":"2015-05-11T00:00:00+10:00"},
-  "observedProperty": "http://environment.data.gov.au/def/property/bacteria_total",
-  "procedure": "http://www.opengis.net/def/waterml/2.0/processType/Manual",
-  "featureOfInterest": "waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/",
-  "resultTime": "2015-05-12T09:00:00+10:00",
+  "id":"integer observation test",
+  "type": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CountObservation",
+  "phenomenonTime": { "instant":"sdfsd2015-05-11T00:00:00+10:00"},
+  "observedProperty": {"href": "http://environment.data.gov.au/def/property/bacteria_total"},
+  "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Manual"},
+  "featureOfInterest": {"href":"waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
+  "resultTime": "2015-05-12Tsdf09:00:00+10:00",
   "result": {
       "value": 3
     }

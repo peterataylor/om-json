@@ -8,107 +8,6 @@
     "id",
     "samplingTime"
   ],
-  "definitions": {
-    "dateTimePeriod": {
-      "title": "dateTimePeriod",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "begin": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "end": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "dateTimeInstant": {
-      "title": "dateTimeInstant",
-      "type": "object",
-      "required": [
-        "instant"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "instant": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "text": {
-      "title": "text",
-      "type": "object",
-      "required": [
-        "value"
-      ],
-      "properties": {
-        "value": {
-          "type": "string"
-        }
-      }
-    },
-    "measure": {
-      "title": "measure",
-      "type": "object",
-      "required": [
-        "value",
-        "uom"
-      ],
-      "properties": {
-        "value": {
-          "type": "number"
-        },
-        "uom": {
-          "type": "string",
-          "format": "uri"
-        }
-      }
-    },
-    "geometryObject": {
-      "title": "geometryObject",
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "https://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
-        }
-      ]
-    },
-    "link": {
-      "title": "link",
-      "type": "object",
-      "required": [
-        "href"
-      ],
-      "properties": {
-        "href": {
-          "type": "string",
-          "format": "uri"
-        },
-        "rel": {
-          "type": "string",
-          "format": "uri"
-        },
-        "title": {
-          "type": "string"
-        }
-      }
-    },
-    "linkOrObject": {
-      "title": "linkOrObject",
-      "type": "object",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/link"
-        },
-        {
-          "type": "object"
-        }
-      ]
-    }
-  },
   "properties": {
     "id": {
       "title": "id",
@@ -116,14 +15,14 @@
       "type": "string"
     },
     "sampledFeature": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "sampledFeature",
       "description": "the feature which the sampling feature was designed to sample"
     },
     "relatedObservation": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/link"
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
       },
       "title": "relatedObservation",
       "description": "Observation that uses this sampling feature"
@@ -156,25 +55,25 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "#/definitions/dateTimePeriod"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
         },
         {
-          "$ref": "#/definitions/dateTimeInstant"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
         }
       ]
     },
     "samplingMethod": {
-      "$ref": "#/definitions/link",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link",
       "title": "samplingMethod",
       "description": "Process used to take the specimen from the sampled feature."
     },
     "samplingLocation": {
       "oneOf": [
         {
-          "$ref": "#/definitions/link"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         {
-          "$ref": "#/definitions/geometryObject"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
         }
       ],
       "title": "samplingLocation",
@@ -183,10 +82,10 @@
     "currentLocation": {
       "oneOf": [
         {
-          "$ref": "#/definitions/link"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         {
-          "$ref": "#/definitions/text"
+          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
         }
       ],
       "title": "currentLocation",
@@ -195,7 +94,7 @@
     "size": {
       "title": "size",
       "description": "Physical extent of the specimen (length, mass, etc)",
-      "$ref": "#/definitions/measure"
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
     }
   }
 }

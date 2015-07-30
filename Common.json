@@ -117,7 +117,7 @@
     "linkOrObject": {
       "title": "linkOrObject",
       "type": "object",
-      "anyOf": [
+      "oneOf": [
         {
           "$ref": "#/properties/link"
         },

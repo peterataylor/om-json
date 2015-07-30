@@ -8,40 +8,6 @@
     "id",
     "member"
   ],
-  "definitions": {
-    "link": {
-      "title": "link",
-      "type": "object",
-      "required": [
-        "href"
-      ],
-      "properties": {
-        "href": {
-          "type": "string",
-          "format": "uri"
-        },
-        "rel": {
-          "type": "string",
-          "format": "uri"
-        },
-        "title": {
-          "type": "string"
-        }
-      }
-    },
-    "linkOrObject": {
-      "title": "linkOrObject",
-      "type": "object",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/link"
-        },
-        {
-          "type": "object"
-        }
-      ]
-    }
-  },
   "properties": {
     "id": {
       "title": "id",
@@ -49,24 +15,24 @@
       "type": "string"
     },
     "featureOfInterest": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
       "description": "the single feature which all observations in the collection are concerned with"
     },
     "procedure": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
       "description": "the observation procedure used in all observations in the collection"
     },
     "observedProperty": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "observedProperty",
       "description": "the property measured or estimated by all observations in the collection"
     },
     "member": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/link"
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
       },
       "minItems": 1,
       "uniqueItems": true,
