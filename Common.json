@@ -74,6 +74,7 @@
     "measure": {
       "title": "measure",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "value",
         "uom"
@@ -90,6 +91,7 @@
     "new-duration": {
       "title": "new-duration",
       "type": "object",
+      "additionalProperties":false,
       "anyOf": [
         {
           "$ref": "#/properties/duration"
@@ -102,6 +104,7 @@
     "link": {
       "title": "link",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "href"
       ],
@@ -122,6 +125,7 @@
     "linkOrObject": {
       "title": "linkOrObject",
       "type": "object",
+      "additionalProperties":false,
       "anyOf": [
         {
           "$ref": "#/properties/link"
@@ -134,6 +138,7 @@
     "boolean": {
       "title": "boolean",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "value"
       ],
@@ -146,6 +151,7 @@
     "temporalPrimitive": {
       "title": "temporalPrimitive",
       "type": "object",
+      "additionalProperties":false,
       "oneOf": [
         {
           "$ref": "#/properties/dateTimePeriod"
@@ -158,6 +164,7 @@
     "temporalObject": {
       "title": "temporalObject",
       "type": "object",
+      "additionalProperties":false,
       "oneOf": [
         {
           "$ref": "#/properties/dateTimePeriod"
@@ -173,6 +180,7 @@
     "count": {
       "title": "count",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "value"
       ],
@@ -188,6 +196,7 @@
       "required": [
         "value"
       ],
+      "additionalProperties":false,
       "properties": {
         "value": {
           "type": "string"
@@ -197,6 +206,7 @@
     "geometryObject": {
       "title": "geometryObject",
       "type": "object",
+      "additionalProperties":false,
       "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
     }
   }
