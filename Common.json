@@ -6,13 +6,13 @@
   "type": "object",
   "properties": {
     "dateTimePeriod": { "title": "dateTimePeriod", "type": "object", "additionalProperties": false, "properties": {
-        "begin": {
-          "$ref": "#/properties/dateTime"
-        },
-        "end": {
-          "$ref": "#/properties/dateTime"
-        }
+      "begin": {
+        "$ref": "#/properties/dateTime"
+      },
+      "end": {
+        "$ref": "#/properties/dateTime"
       }
+    }
     },
     "dateTimeInstant": {
       "title": "dateTimeInstant",
@@ -46,6 +46,10 @@
       "title": "dateTime",
       "type": "string",
       "oneOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
         {
           "$ref": "#/properties/date"
         },
