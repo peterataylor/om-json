@@ -5,14 +5,19 @@
   "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
   "type": "object",
   "properties": {
-    "dateTimePeriod": { "title": "dateTimePeriod", "type": "object", "additionalProperties": false, "properties": {
-      "begin": {
-        "$ref": "#/properties/dateTime"
-      },
-      "end": {
-        "$ref": "#/properties/dateTime"
+    "dateTimePeriod": { 
+      "title": "dateTimePeriod", 
+      "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
+      "type": "object", 
+      "additionalProperties": false, 
+      "properties": {
+        "begin": {
+          "$ref": "#/properties/dateTime"
+        },
+        "end": {
+          "$ref": "#/properties/dateTime"
+        }
       }
-    }
     },
     "dateTimeInstant": {
       "title": "dateTimeInstant",
@@ -137,6 +142,18 @@
           "type": "boolean"
         }
       }
+    },
+    "temporalPrimitive": {
+      "title": "temporalPrimitive",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/properties/dateTimePeriod"
+        },
+        {
+          "$ref": "#/properties/dateTimeInstant"
+        },
+      ]
     },
     "temporalObject": {
       "title": "temporalObject",
