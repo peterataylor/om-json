@@ -63,15 +63,10 @@
     },
     "context": {
       "title": "context",
-      "description": "links to observations that provide the context for this observation - THIS SHOULD HAVE AN ARRAY OF VALUES ",
+      "description": "links to observations that provide the context for this observation - use 'rel' for 'role'",
       "type": "array",
       "items": {
-        "properties": {
-          "role": {
-            "type": "string"
-          },
-          "$ref": "#/observation"
-        }
+        "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
       }
     },
     "result": {
