@@ -1,7 +1,0 @@
-{
-  "phenomenonTime": { "begin":"2011-05-11T00:00:00+10:00","end":"2011-05-11T00:00:00+10:00"},
-  "observedProperty": "http://environment.data.gov.au/def/property/pH_water",
-  "procedure": "http://www.opengis.net/def/waterml/2.0/processType/Sensor",
-  "featureOfInterest": "http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/",
-  "resultTime": "2011-05-12T09:00:00+10:00"
-}

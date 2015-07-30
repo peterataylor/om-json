@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://waterml2.csiro.au/om-json/common.json",
+  "title": "Common",
+  "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
+  "type": "object",
+  "properties": {
+    "dateTimePeriod": { "title": "dateTimePeriod", "type": "object", "additionalProperties": false, "properties": {
+      "begin": {
+        "$ref": "#/properties/dateTime"
+      },
+      "end": {
+        "$ref": "#/properties/dateTime"
+      }
+    }
+    },
+    "dateTimeInstant": {
+      "title": "dateTimeInstant",
+      "type": "object",
+      "required": [
+        "instant"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "instant": {
+          "$ref": "#/properties/dateTime"
+        }
+      }
+    },
+    "date": {
+      "title": "date",
+      "type": "string",
+      "pattern": "^([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$"
+    },
+    "g-year-month": {
+      "title": "g-year-month",
+      "type": "string",
+      "pattern": "^([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$"
+    },
+    "g-year": {
+      "title": "g-year",
+      "type": "string",
+      "pattern": "^([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$"
+    },
+    "dateTime": {
+      "title": "dateTime",
+      "type": "string",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "$ref": "#/properties/date"
+        },
+        {
+          "$ref": "#/properties/g-year-month"
+        },
+        {
+          "$ref": "#/properties/g-year"
+        }
+      ]
+    },
+    "duration": {
+      "title": "duration",
+      "type": "string",
+      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
+    },
+    "measure": {
+      "title": "measure",
+      "type": "object",
+      "required": [
+        "value",
+        "uom"
+      ],
+      "new-duration": {
+        "title": "new-duration",
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/properties/duration"
+          },
+          {
+            "$ref": "#/properties/measure"
+          }
+        ]
+      },
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "uom": {
+          "type": "string"
+        }
+      }
+    },
+    "link": {
+      "title": "link",
+      "type": "object",
+      "required": [
+        "href"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "rel": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "linkOrObject": {
+      "title": "linkOrObject",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/properties/link"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "boolean": {
+      "title": "boolean",
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "temporalObject": {
+      "title": "temporalObject",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/properties/dateTimePeriod"
+        },
+        {
+          "$ref": "#/properties/dateTimeInstant"
+        },
+        {
+          "$ref": "#/properties/duration"         
+        }
+      ]
+    },
+    "count": {
+      "title": "count",
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "integer"
+        }
+      }
+    },
+    "text": {
+      "title": "text",
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "geometryObject": {
+      "title": "geometryObject",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
+        }
+      ]
+    }
+  }
+}

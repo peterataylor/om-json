@@ -1,9 +1,10 @@
 {
+  "id":"measure-instance-test",
   "type" : "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
   "phenomenonTime": { "instant":"2011-05-11T00:00:00+10:00" },
-  "observedProperty": "http://environment.data.gov.au/def/property/air_temperature",
-  "procedure": "http://www.opengis.net/def/waterml/2.0/processType/Sensor",
-  "featureOfInterest": "waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/",
+  "observedProperty": {"href":"http://environment.data.gov.au/def/property/air_temperature"},
+  "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
+  "featureOfInterest": {"href":"http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
   "resultTime": "2011-05-12T09:00:00+10:00",
   "result": {
       "value": 3.2,

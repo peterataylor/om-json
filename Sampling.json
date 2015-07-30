@@ -7,40 +7,6 @@
   "required": [
     "id"
   ],
-  "definitions": {
-    "link": {
-      "title": "link",
-      "type": "object",
-      "required": [
-        "href"
-      ],
-      "properties": {
-        "href": {
-          "type": "string",
-          "format": "uri"
-        },
-        "rel": {
-          "type": "string",
-          "format": "uri"
-        },
-        "title": {
-          "type": "string"
-        }
-      }
-    },
-    "linkOrObject": {
-      "title": "linkOrObject",
-      "type": "object",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/link"
-        },
-        {
-          "type": "object"
-        }
-      ]
-    }
-  },
   "properties": {
     "id": {
       "title": "id",
@@ -48,14 +14,14 @@
       "type": "string"
     },
     "sampledFeature": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "sampledFeature",
       "description": "the feature which the sampling feature was designed to sample"
     },
     "relatedObservation": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/link"
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
       },
       "title": "relatedObservation",
       "description": "Observation that uses this sampling feature"

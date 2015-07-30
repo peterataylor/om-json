@@ -4,198 +4,12 @@
   "title": "Observation",
   "description": "An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "id",
     "phenomenonTime",
     "result"
   ],
-  "definitions": {
-    "dateTimePeriod": {
-      "title": "dateTimePeriod",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "begin": {
-          "$ref": "#/definitions/new-date-time"
-        },
-        "end": {
-          "$ref": "#/definitions/new-date-time"
-        }
-      }
-    },
-    "dateTimeInstant": {
-      "title": "dateTimeInstant",
-      "type": "object",
-      "required": [
-        "instant"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "instant": {
-          "$ref": "#/definitions/new-date-time"
-        }
-      }
-    },
-    "date": {
-      "title": "date",
-      "type": "string",
-      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-    },
-    "g-year-month": {
-      "title": "g-year-month",
-      "type": "string",
-      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-    },
-    "g-year": {
-      "title": "g-year",
-      "type": "string",
-      "pattern": "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-    },
-    "new-date-time": {
-      "title": "new-date-time",
-      "type": "object",
-      "anyOf": [
-        {
-          "type": "string",
-          "format": "date-time"
-        },
-        {
-          "$ref": "#/definitions/date"
-        },
-        {
-          "$ref": "#/definitions/g-year-month"
-        },
-        {
-          "$ref": "#/definitions/g-year"
-        }
-      ]
-    },
-    "duration": {
-      "title": "duration",
-      "type": "string",
-      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
-    },
-    "measure": {
-      "title": "measure",
-      "type": "object",
-      "required": [
-        "value",
-        "uom"
-      ],
-    "new-duration": {
-      "title": "new-duration",
-      "type": "object",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/duration"
-        },
-        {
-          "$ref": "#/definitions/measure"
-        }
-      ]
-    },
-      "properties": {
-        "value": {
-          "type": "number"
-        },
-        "uom": {
-          "type": "string"
-        }
-      }
-    },
-    "link": {
-      "title": "link",
-      "type": "object",
-      "required": [
-        "href"
-      ],
-      "properties": {
-        "href": {
-          "type": "string",
-          "format": "uri"
-        },
-        "rel": {
-          "type": "string",
-          "format": "uri"
-        },
-        "title": {
-          "type": "string"
-        }
-      }
-    },
-    "linkOrObject": {
-      "title": "linkOrObject",
-      "type": "object",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/link"
-        },
-        {
-          "type": "object"
-        }
-      ]
-    },
-    "boolean": {
-      "title": "boolean",
-      "type": "object",
-      "required": [
-        "value"
-      ],
-      "properties": {
-        "value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "temporalObject": {
-      "title": "temporalObject",
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "#/definitions/dateTimePeriod"
-        },
-        {
-          "$ref": "#/definitions/dateTimeInstant"
-        },
-        {
-          "$ref": "#/definitions/duration"         
-        }
-      ]
-    },
-    "count": {
-      "title": "count",
-      "type": "object",
-      "required": [
-        "value"
-      ],
-      "properties": {
-        "value": {
-          "type": "integer"
-        }
-      }
-    },
-    "text": {
-      "title": "text",
-      "type": "object",
-      "required": [
-        "value"
-      ],
-      "properties": {
-        "value": {
-          "type": "string"
-        }
-      }
-    },
-    "geometryObject": {
-      "title": "geometryObject",
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "https://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
-        }
-      ]
-    }
-  },
   "properties": {
     "id": {
       "title": "id",
@@ -208,30 +22,30 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "#/definitions/dateTimePeriod"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
         },
         {
-          "$ref": "#/definitions/dateTimeInstant"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
         }
       ]
     },
     "observedProperty": {
       "title": "observedProperty",
       "description": "property whose value is the result of the observation",
-      "$ref": "#/definitions/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
     },
     "procedure": {
-      "$ref": "#/definitions/link",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link",
       "title": "procedure",
       "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
     },
     "featureOfInterest": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
       "description": "subject of the observation, whose type may carry the observed property"
     },
     "samplingStrategy": {
-      "$ref": "#/definitions/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "samplingStrategy",
       "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest"
     },
@@ -265,25 +79,25 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "#/definitions/measure"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
         },
         {
-          "$ref": "#/definitions/text"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
         },
         {
-          "$ref": "#/definitions/boolean"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/boolean"
         },
         {
-          "$ref": "#/definitions/count"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/count"
         },
         {
-          "$ref": "#/definitions/geometryObject"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
         },
         {
-          "$ref": "#/definitions/temporalObject"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalObject"
         },
         {
-          "$ref": "#/definitions/link"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         }
       ]
     }
