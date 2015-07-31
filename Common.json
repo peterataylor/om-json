@@ -194,11 +194,11 @@
       "title": "text",
       "type": "object",
       "required": [
-        "value"
+        "text-value"
       ],
       "additionalProperties":false,
       "properties": {
-        "value": {
+        "text-value": {
           "type": "string"
         }
       }
