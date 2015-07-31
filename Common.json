@@ -9,7 +9,6 @@
       "title": "dateTimePeriod", 
       "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
       "type": "object", 
-      "additionalProperties": false, 
       "properties": {
         "begin": {
           "$ref": "#/properties/dateTime"
@@ -25,7 +24,6 @@
       "required": [
         "instant"
       ],
-      "additionalProperties": false,
       "properties": {
         "instant": {
           "$ref": "#/properties/dateTime"
@@ -151,7 +149,6 @@
     "temporalPrimitive": {
       "title": "temporalPrimitive",
       "type": "object",
-      "additionalProperties":false,
       "oneOf": [
         {
           "$ref": "#/properties/dateTimePeriod"
