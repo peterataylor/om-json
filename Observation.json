@@ -19,31 +19,26 @@
     "phenomenonTime": {
       "title": "phenomenonTime",
       "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
-      "additionalProperties":false,
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
     },
     "observedProperty": {
       "title": "observedProperty",
       "description": "property whose value is the result of the observation",
-      "additionalProperties":false,
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
     },
     "procedure": {
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link",
       "title": "procedure",
-      "additionalProperties":false,
       "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
     },
     "featureOfInterest": {
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
-      "additionalProperties":false,
       "description": "subject of the observation, whose type may carry the observed property"
     },
     "samplingStrategy": {
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "samplingStrategy",
-      "additionalProperties":false,
       "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest"
     },
     "type": {
@@ -70,7 +65,6 @@
       "title": "result",
       "description": "result of the observation",
       "type": "object",
-      "additionalProperties":false,
       "oneOf": [
         {
           "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
