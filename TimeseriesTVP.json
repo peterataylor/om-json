@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesTVP.json",
+  "title": "TimeseriesTVP",
+  "description": "A TimeseriesML time-value pair encoded timeseries",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id"
+  ],
+  "definitions": {
+    "TVPairMeasure" : {
+      "type:"object",
+      "description:"A time-value pair with a measure value.",
+      "properties" : {
+        "time": {
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
+        },
+        "value": {
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+        }
+      }
+    },
+    "TVPairCategory" : {
+      "type:"object",
+      "description:"A time-value pair with a catgeory result.",
+      "properties" : {
+        "time": {
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
+        },
+        "value": {
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
+        }
+      }
+    }
+  },
+  "properties": {
+    "metadata": {
+      "title": "metadata",
+      "description": "Metadata about the timeseries.",
+      "type": "object",
+      "$ref": ""
+    },
+    "defaultPointMetadata": {
+      "title": "defaultPointMetadata",
+      "description": "Default metadata for each point in the timeseries (can be over-ridden on a per-point basis).",
+      "$ref": ""
+    },
+    "points": {
+      "title": "points",
+      "description": "The data points (time, value pairs) for the timeseries.",
+      "type":"array",
+      "items": {
+        "oneOf" : [ 
+          { "$ref": "#/definitions/TVPairMeasure" },
+          { "$ref": "#/definitions/TVPairCategory" }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://raw.githubusercontent.com/peterataylor/om-json/master/MonitoringFeature.json",
+  "title": "MonitoringFeature",
+  "description": "A TimeseriesML MonitoringFeature",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id"
+  ],
+  "definitions": {
+    "timeZoneType": {
+      "type": "object",
+      "properties": {
+        "zoneOffset": {
+          "type":"string",
+          "description":"Time zone offset e.g. +10:00 GM"
+        },
+        "zoneAbbreviation": {
+          "type":"string",
+          "description":"Abbreviation for a timezone e.g. AEST."
+        }
+      }
+    }
+  },
+  "properties": {
+    "relatedParty": {
+      "title": "relatedParty",
+      "description": "The details of a party related to this MonitoringFeature.  Multiple related parties may be described using the role code list (from ISO 19115). The most common relationships are likely to be: owner, originator, pointOfContact, principalInvestigator and distributor.",
+      "type": "array"
+    },
+    "representativePoint": {
+      "title": "representativePoint",
+      "description": "A point location that is representative of the monitoring feature's location. Typically this is used when the shape of the monitoring feature is an area or other non-point geometry. It may also be used to provide an approximate point location in sensitive observation scenarios.",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+    },
+    "monitoringType": {
+      "title": "monitoringType",
+      "description": "A thematic characterisation of the type of monitoring feature. E.g. meteorological, surface water, groundwater, water quality etc.",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+    },
+    "descriptionReference": {
+      "title": "descriptionReference",
+      "description": "Provide extra descriptive information about a monitoring feature. This could be a link to an HTML page describing the location, photos of a monitoring point, history records etc.",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+    },
+    "verticalDatum": {
+      "title": "verticalDatum",
+      "description": "Specifies the elevation that is used as the zero point, or datum, for height-related measurements. The datum is defined using a vertical datum, which may be defined using the ISO19111 type CD_VerticalDatum, or an agreed upon datum may be reference by its identifier. E.g. the Australian Height Datum (AHD), Tasmania = “EPSG::5112”. The CD_VerticalDatum type allows specification of the local vertical datum as a height above another reference datum. E.g. local vertical datum is 23m above the AHD.",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+    },
+    "timeZone": {
+      "title": "timeZone",
+      "description": "The timezone that the MonitoringFeature is located in.",
+      "type": "object",
+      "$ref": "#/definitions/timeZoneType"
+    },
+    "daylightSavingsTimeZone": {
+      "title": "daylightSavingsTimeZone",
+      "description": "The timezone that the MonitoringFeature is located in when daylight savings applies.",
+      "type": "object",
+      "$ref": "#/definitions/timeZoneType"
+    }
+  }
+}

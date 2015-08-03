@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json",
+  "title": "TimeseriesMetadata",
+  "description": "Schema for metadata relating to Timeseries",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+  ],
+  "definitions": {
+    "TimeseriesMetadata" : {
+      "type":"object",
+      "description":"Metadata for the whole timeseries",
+      "properties" : {
+        "temporalExtent": {
+          "title":"temporalExtent",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
+        },
+        "baseTime": {
+          "title":"baseTime",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+        },
+        "spacing": {
+          "title":"spacing",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+        },
+        "commentBlock" : {
+          "title" : "commentBlock",
+          "type" : "object",
+          "properties" : {
+            "applicablePeriod" : {
+              "type":"object",
+              "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
+            },
+            "comment" : {
+              "type" : "string"
+            }
+          }
+        },
+        "commentBlocks": {
+          "title":"commentBlocks",
+          "type":"array",
+          "items" : { 
+            "$ref":"#/definitions/commentBlock"
+          }
+        },
+        "intendedObservationSpacing": {
+          "title":"intendedObservationSpacing",
+          "description": "The extent of the temporal domain of the timeseries. As the domain of the timeseries is temporal, the temporalExtent is a time period defining the start and end of its temporal domain (i.e. the start and end of the timeseries). Note that this often the same as the phenomenon time as specified in the OM_Observation; it is still useful here for timeseries that are described separately from an OM_Observation header.",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
+        },
+        "status": {
+          "title":"status",
+          "description": "Indicates the statues of the observation. E.g. unreleased, verified etc.",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "cumulative": {
+          "title":"cumulative",
+          "description": "This boolean property indicates whether the series is  sequentially increasing and accumulates over time; i.e. each value is added to the last so the value represents the total of a value since accumulation began.",
+          "type":"boolean"
+        },
+        "accumulationAnchorTime": {
+          "title":"accumulationAnchorTime",
+          "description": "Defines the time at which accumulation begins. e.g. 9am.",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+        },
+        "startAnchorPoint": {
+          "title":"startAnchorPoint",
+          "description": "Specifies a ‘ghost’ point to allow the first value of the timeseries to be interpolated correctly.",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+        },
+        "endAnchorPoint": {
+          "title":"endAnchorPoint",
+          "description": "Specifies a ‘ghost’ point to allow the last value of the timeseries to be interpolated correctly.",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+        },
+        "maxGapPeriod": {
+          "title":"maxGapPeriod",
+          "description": "When any analysis is run over a timeseries it is important to know if it is possible to interpolate between any two adjoining points. If the join period between two adjoining points is greater than the maxGapPeriod then the series should not be interpolated between these adjoining points.",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+        }
+      }
+    }
+  }
+}
