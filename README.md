@@ -7,6 +7,8 @@ Main observation schema: [Observation](https://github.com/peterataylor/om-json/b
    * [Measurement observation example](https://github.com/peterataylor/om-json/blob/master/observation-instance-example-measure.json)
    * [Geometry (polygon) observation example](https://github.com/peterataylor/om-json/blob/master/observation-instance-example-geometry-polygon.json)
 
+I've setup an altered version of JSON Schema Lint here: http://waterml2.csiro.au/om-json/, which uses Tiny Validator v4 and loads the schema and instance examples from this repository. 
+
 ## Tools
 
   * Handy online validation of instances against schema: http://jsonschemalint.com/ (although lacks good errors for linked schemas)
