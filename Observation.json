@@ -56,7 +56,6 @@
     "result": {
       "title": "result",
       "description": "result of the observation",
-      "type": "object",
       "oneOf": [
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"        },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"           },
