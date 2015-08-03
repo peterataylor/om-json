@@ -25,5 +25,4 @@ I've setup an altered version of JSON Schema Lint here: http://waterml2.csiro.au
   * Investigate more strict validation from the Python library. 
   * Improve inheritence approach (currently just clones base type properties) 
   * Timseries support (i.e. timeseriesML)
-  * ?replace role/relatedObservation with standard links rel/href?
   * Online validator 
