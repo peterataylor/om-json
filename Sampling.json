@@ -4,9 +4,6 @@
   "title": "Sampling feature",
   "description": "Feature on which observations may be made, which is intended to be representative of a different (usually larger) feature that is not fully accessible for some reason.",
   "type": "object",
-  "required": [
-    "id"
-  ],
   "properties": {
     "id": {
       "title": "id",
@@ -14,25 +11,25 @@
       "type": "string"
     },
     "sampledFeature": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "sampledFeature",
-      "description": "the feature which the sampling feature was designed to sample"
+      "description": "the feature which the sampling feature was designed to sample",
+      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
     },
     "relatedObservation": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
-      },
       "title": "relatedObservation",
-      "description": "Observation that uses this sampling feature"
+      "description": "Observation that uses this sampling feature",
+      "type": "array",
+      "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
     },
-    "relatedSamplingFeature": {
-      "title": "relatedSamplingFeature",
+    "complex": {
+      "title": "complex",
       "description": "link to related sampling features",
       "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
-      }
+      "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
     }
-  }
+  },
+  "required": [
+    "id",
+    "sampledFeature"
+  ]
 }
