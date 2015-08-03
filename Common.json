@@ -5,33 +5,6 @@
   "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
   "type": "object",
   "properties": {
-    "dateTimePeriod": { 
-      "title": "dateTimePeriod", 
-      "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
-      "type": "object", 
-      "additionalProperties":false,
-      "properties": {
-        "begin": {
-          "$ref": "#/properties/dateTime"
-        },
-        "end": {
-          "$ref": "#/properties/dateTime"
-        }
-      }
-    },
-    "dateTimeInstant": {
-      "title": "dateTimeInstant",
-      "type": "object",
-      "additionalProperties":false,
-      "required": [
-        "instant"
-      ],
-      "properties": {
-        "instant": {
-          "$ref": "#/properties/dateTime"
-        }
-      }
-    },
     "date": {
       "title": "date",
       "type": "string",
@@ -46,6 +19,11 @@
       "title": "g-year",
       "type": "string",
       "pattern": "^([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$"
+    },
+    "duration": {
+      "title": "duration",
+      "type": "string",
+      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
     },
     "dateTime": {
       "title": "dateTime",
@@ -66,10 +44,60 @@
         }
       ]
     },
-    "duration": {
-      "title": "duration",
-      "type": "string",
-      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
+    "dateTimeInstant": {
+      "title": "dateTimeInstant",
+      "type": "object",
+      "additionalProperties":false,
+      "required": [
+        "instant"
+      ],
+      "properties": {
+        "instant": {
+          "$ref": "#/properties/dateTime"
+        }
+      }
+    },
+    "dateTimePeriod": { 
+      "title": "dateTimePeriod", 
+      "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
+      "type": "object", 
+      "additionalProperties":false,
+      "properties": {
+        "begin": {
+          "$ref": "#/properties/dateTime"
+        },
+        "end": {
+          "$ref": "#/properties/dateTime"
+        }
+      }
+    },
+    "temporalPrimitive": {
+      "title": "temporalPrimitive",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/properties/dateTimePeriod"
+        },
+        {
+          "$ref": "#/properties/dateTimeInstant"
+        }
+      ]
+    },
+    "temporalObject": {
+      "title": "temporalObject",
+      "type": "object",
+      "additionalProperties":false,
+      "oneOf": [
+        {
+          "$ref": "#/properties/dateTimePeriod"
+        },
+        {
+          "$ref": "#/properties/dateTimeInstant"
+        },
+        {
+          "$ref": "#/properties/duration"         
+        }
+      ]
     },
     "measure": {
       "title": "measure",
@@ -87,6 +115,51 @@
           "type": "string"
         }
       }
+    },
+    "boolean": {
+      "title": "boolean",
+      "type": "object",
+      "additionalProperties":false,
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "count": {
+      "title": "count",
+      "type": "object",
+      "additionalProperties":false,
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "integer"
+        }
+      }
+    },
+    "text": {
+      "title": "text",
+      "type": "object",
+      "required": [
+        "text-value"
+      ],
+      "additionalProperties":false,
+      "properties": {
+        "text-value": {
+          "type": "string"
+        }
+      }
+    },
+    "geometryObject": {
+      "title": "geometryObject",
+      "type": "object",
+      "additionalProperties":false,
+      "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
     },
     "new-duration": {
       "title": "new-duration",
@@ -133,79 +206,6 @@
           "type": "object"
         }
       ]
-    },
-    "boolean": {
-      "title": "boolean",
-      "type": "object",
-      "additionalProperties":false,
-      "required": [
-        "value"
-      ],
-      "properties": {
-        "value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "temporalPrimitive": {
-      "title": "temporalPrimitive",
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "#/properties/dateTimePeriod"
-        },
-        {
-          "$ref": "#/properties/dateTimeInstant"
-        }
-      ]
-    },
-    "temporalObject": {
-      "title": "temporalObject",
-      "type": "object",
-      "additionalProperties":false,
-      "oneOf": [
-        {
-          "$ref": "#/properties/dateTimePeriod"
-        },
-        {
-          "$ref": "#/properties/dateTimeInstant"
-        },
-        {
-          "$ref": "#/properties/duration"         
-        }
-      ]
-    },
-    "count": {
-      "title": "count",
-      "type": "object",
-      "additionalProperties":false,
-      "required": [
-        "value"
-      ],
-      "properties": {
-        "value": {
-          "type": "integer"
-        }
-      }
-    },
-    "text": {
-      "title": "text",
-      "type": "object",
-      "required": [
-        "text-value"
-      ],
-      "additionalProperties":false,
-      "properties": {
-        "text-value": {
-          "type": "string"
-        }
-      }
-    },
-    "geometryObject": {
-      "title": "geometryObject",
-      "type": "object",
-      "additionalProperties":false,
-      "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
     }
   }
 }
