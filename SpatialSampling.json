@@ -2,74 +2,48 @@
   "$schema": "http://json-schema.org/schema#",
   "id": "http://waterml2.csiro.au/om-json/spatial-sampling.json",
   "title": "Spatial Sampling Feature",
-  "description": "  ## EXTENDS SAMPLING FEATURE - DONE HERE BY CLONING ##  Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting. ",
+  "description": "  ## EXTENDS SAMPLING FEATURE ##  Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting. ",
   "type": "object",
-  "additionalProperies" : false,
-  "required": [
-    "id",
-    "type",
-    "shape"
+  "allOf": [
+    { 
+        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json#" 
+    },
+    {
+        "properties": {
+            "type": {
+                "title": "type",
+                "description": "Identifies the type of spatial sampling feature, which determines the type of the shape property",
+                "type": "string",
+                "format": "uri"
+            },
+            "shape": {
+                "title": "shape",
+                "description": "Spatial location and extent of the sampling feature",
+                "type": "object",
+                "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+            },
+            "hostedProcedure": {
+                "title": "hostedProcedure",
+                "description": "Observation procedure (instrument, sensor, observer) associated with or hosted by this spatial sampling feature.",
+                "type": "array",
+                "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
+            }
+        }
+    }
   ],
   "properties": {
-    "id": {
-      "title": "id",
-      "description": "A unique identifier for the sampling feature",
-      "type": "string"
-    },
-    "sampledFeature": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
-      "title": "sampledFeature",
-      "description": "the feature which the sampling feature was designed to sample"
-    },
-    "relatedObservation": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
-      },
-      "title": "relatedObservation",
-      "description": "Observation that uses this sampling feature"
-    },
-    "complex": {
-      "title": "complex",
-      "description": "link to related sampling features",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [
-          "role",
-          "relatedSamplingFeature"
-        ],
-        "properties": {
-          "role": {
-            "type": "string",
-            "format": "uri"
-          },
-          "relatedSamplingFeature": {
-            "type": "string",
-            "format": "uri"
-          }
-        }
-      }
-    },
-    "type": {
-      "title": "type",
-      "description": "Identifies the type of spatial sampling feature, which determines the type of the shape property",
-      "type": "string",
-      "format": "uri"
-    },
-    "shape": {
-      "title": "shape",
-      "description": "Spatial location and extent of the sampling feature",
-      "type": "object",
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
-    },
-    "hostedProcedure": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
-      },
-      "title": "hostedProcedure",
-      "description": "Observation procedure (instrument, sensor, observer) associated with or hosted by this spatial sampling feature."
-    }
-  }
+    "id": {},
+    "sampledFeature": {},
+    "relatedObservation": {},
+    "complex": {},
+    "type": {},
+    "shape": {},
+    "hostedProcedure": {}
+  },
+  "required": [
+    "id",
+    "sampledFeature",
+    "type",
+    "shape"
+  ]
 }
