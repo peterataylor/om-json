@@ -78,8 +78,7 @@
         { "$ref": "#/properties/dateTimePeriod"  },
         { "$ref": "#/properties/dateTimeInstant" },
         { "$ref": "#/properties/duration"        }
-      ],
-      "additionalProperties": false
+      ]
     },
     "measure": {
       "title": "measure",
