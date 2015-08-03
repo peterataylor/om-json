@@ -3,13 +3,22 @@
   "id": "http://waterml2.csiro.au/om-json/observation.json",
   "title": "Observation",
   "description": "An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
-  "type": "object",
-  "additionalProperties": false,
-  "required": [
-    "id",
-    "phenomenonTime",
-    "result"
-  ],
+  "definitions": {
+    "timeSeries": {
+       "title": "timeSeries",
+       "description": "array of time, value pairs",
+       "type": "array",
+       "items": {
+           "type": "object",
+           "properties": {
+               "time":  { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive" },
+               "value": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"           }
+           },
+           "required": [ "time", "value" ]
+       }
+    }  
+  },
+"type": "object",
   "properties": {
     "id": {
       "title": "id",
@@ -27,19 +36,19 @@
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
     },
     "procedure": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link",
       "title": "procedure",
-      "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure."
+      "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure.",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
     },
     "featureOfInterest": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
-      "description": "subject of the observation, whose type may carry the observed property"
+      "description": "subject of the observation, whose type may carry the observed property",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
     },
     "samplingStrategy": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "samplingStrategy",
-      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest"
+      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
     },
     "type": {
       "title": "type",
@@ -57,37 +66,26 @@
       "title": "context",
       "description": "links to observations that provide the context for this observation - use 'rel' for 'role'",
       "type": "array",
-      "items": {
-        "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
-      }
+      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
     },
     "result": {
       "title": "result",
       "description": "result of the observation",
-      "type": "object",
       "oneOf": [
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/boolean"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/count"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalObject"
-        },
-        {
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
-        }
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"           },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/boolean"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/count"          },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject" },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalObject" },
+        { "$ref": "#/definitions/timeSeries"     },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"           }
       ]
     }
-  }
+  },
+  "required": [
+    "id",
+    "phenomenonTime",
+    "result"
+  ]
 }

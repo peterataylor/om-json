@@ -1,0 +1,23 @@
+{
+  "id":"timeseries-instance-test",
+  "type" : "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_DiscreteTimeSeriesObservation",
+  "phenomenonTime": { "begin":"2015-08-03", "end":"2015-08-05" },
+  "observedProperty": {"href":"http://environment.data.gov.au/def/property/air_temperature"},
+  "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
+  "featureOfInterest": {"href":"http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
+  "resultTime": "2015-08-05T09:00:00+10:00",
+  "result": [
+       { 
+         "time":  { "instant": "2015-08-03" },
+         "value": { "value": 3.2, "uom": "http://qudt.org/vocab/unit#DegreeCelsius" }
+       },
+       { 
+         "time":  { "instant": "2015-08-04" },
+         "value": { "value": 3.5, "uom": "http://qudt.org/vocab/unit#DegreeCelsius" }
+       },
+       { 
+         "time":  { "instant": "2015-08-05" }, 
+         "value": { "value": 3.6, "uom": "http://qudt.org/vocab/unit#DegreeCelsius" }
+       }
+     ]
+}
