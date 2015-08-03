@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "http://waterml2.csiro.au/om-json/common.json",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json",
   "title": "Common",
   "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
   "type": "object",
@@ -9,7 +9,7 @@
       "title": "dateTimePeriod", 
       "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
       "type": "object", 
-      "additionalProperties": false, 
+      "additionalProperties":false,
       "properties": {
         "begin": {
           "$ref": "#/properties/dateTime"
@@ -22,10 +22,10 @@
     "dateTimeInstant": {
       "title": "dateTimeInstant",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "instant"
       ],
-      "additionalProperties": false,
       "properties": {
         "instant": {
           "$ref": "#/properties/dateTime"
@@ -74,6 +74,7 @@
     "measure": {
       "title": "measure",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "value",
         "uom"
@@ -90,6 +91,7 @@
     "new-duration": {
       "title": "new-duration",
       "type": "object",
+      "additionalProperties":false,
       "anyOf": [
         {
           "$ref": "#/properties/duration"
@@ -102,6 +104,7 @@
     "link": {
       "title": "link",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "href"
       ],
@@ -134,6 +137,7 @@
     "boolean": {
       "title": "boolean",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "value"
       ],
@@ -158,6 +162,7 @@
     "temporalObject": {
       "title": "temporalObject",
       "type": "object",
+      "additionalProperties":false,
       "oneOf": [
         {
           "$ref": "#/properties/dateTimePeriod"
@@ -173,6 +178,7 @@
     "count": {
       "title": "count",
       "type": "object",
+      "additionalProperties":false,
       "required": [
         "value"
       ],
@@ -186,10 +192,11 @@
       "title": "text",
       "type": "object",
       "required": [
-        "value"
+        "text-value"
       ],
+      "additionalProperties":false,
       "properties": {
-        "value": {
+        "text-value": {
           "type": "string"
         }
       }
@@ -197,11 +204,8 @@
     "geometryObject": {
       "title": "geometryObject",
       "type": "object",
-      "oneOf": [
-        {
-          "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
-        }
-      ]
+      "additionalProperties":false,
+      "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json"
     }
   }
 }
