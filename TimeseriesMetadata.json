@@ -50,7 +50,7 @@
           "title":"intendedObservationSpacing",
           "description": "The extent of the temporal domain of the timeseries. As the domain of the timeseries is temporal, the temporalExtent is a time period defining the start and end of its temporal domain (i.e. the start and end of the timeseries). Note that this often the same as the phenomenon time as specified in the OM_Observation; it is still useful here for timeseries that are described separately from an OM_Observation header.",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
         },
         "status": {
           "title":"status",
