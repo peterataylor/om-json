@@ -5,8 +5,6 @@
   "description": "Schema for metadata relating to Timeseries",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-  ],
   "definitions": {
     "TimeseriesMetadata" : {
       "type":"object",
@@ -121,27 +119,27 @@
         },
         "accuracy": {
           "title":"accuracy",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
         },
         "relatedObservation": {
           "title":"relatedObservation",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         "aggregationDuration": {
           "title":"aggregationDuration",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
         },
         "qualifier": {
           "title":"qualifier",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         "processing": {
           "title":"processing",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         "source": {
           "title":"source",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         }
       }
     }
