@@ -25,22 +25,12 @@
           "type": "array",
           "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
         }
-      }
+      },
+      "additionalProperties" : false,
+      "required": [
+        "type",
+        "shape"
+      ]
     }
-  ],
-  "properties": {
-    "id": {},
-    "sampledFeature": {},
-    "relatedObservation": {},
-    "complex": {},
-    "type": {},
-    "shape": {},
-    "hostedProcedure": {}
-  },
-  "required": [
-    "id",
-    "sampledFeature",
-    "type",
-    "shape"
   ]
 }
