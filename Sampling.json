@@ -13,19 +13,19 @@
     "sampledFeature": {
       "title": "sampledFeature",
       "description": "the feature which the sampling feature was designed to sample",
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
     },
     "relatedObservation": {
       "title": "relatedObservation",
       "description": "Observation that uses this sampling feature",
       "type": "array",
-      "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
+      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
     },
     "complex": {
       "title": "complex",
       "description": "link to related sampling features",
       "type": "array",
-      "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
+      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
     }
   },
   "required": [

@@ -5,7 +5,7 @@
   "description": "  ## EXTENDS SAMPLING FEATURE ##  Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting. ",
   "type": "object",
   "allOf": [
-    { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json#" },
+    { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json#" },
     {
       "properties": {
         "type": {
@@ -17,13 +17,13 @@
         "shape": {
           "title": "shape",
           "description": "Spatial location and extent of the sampling feature",
-          "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
         },
         "hostedProcedure": {
           "title": "hostedProcedure",
           "description": "Observation procedure (instrument, sensor, observer) associated with or hosted by this spatial sampling feature.",
           "type": "array",
-          "items": { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
+          "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
         }
       },
       "additionalProperties" : false,
