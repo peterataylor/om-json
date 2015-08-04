@@ -26,22 +26,22 @@
           "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link" }
         }
       },
-      "additionalProperties" : false,
-      "properties": {
-            "id": {},
-            "sampledFeature": {},
-            "relatedObservation": {},
-            "complex": {},
-            "type": {},
-            "shape": {},
-            "hostedProcedure": {}
-          },
-      "required": [
-        "id",
-        "sampledFeature",
-        "type",
-        "shape"
-      ]
+      "additionalProperties" : false
     }
+  ],
+  "properties": {
+    "id": {},
+    "sampledFeature": {},
+    "relatedObservation": {},
+    "complex": {},
+    "type": {},
+    "shape": {},
+    "hostedProcedure": {}
+  },
+  "required": [
+    "id",
+    "sampledFeature",
+    "type",
+    "shape"
   ]
 }
