@@ -86,6 +86,7 @@
     },
     "measure": {
       "title": "measure",
+      "description": "make uom optional, to support the case where a common uom is used in a collection",
       "type": "object",
       "properties": {
         "value": {
@@ -96,8 +97,7 @@
         }
       },
       "required": [
-        "value",
-        "uom"
+        "value"
       ],
       "additionalProperties": false
     },
@@ -129,10 +129,15 @@
     },
     "text": {
       "title": "text",
+      "description": "string with optional vocabulary source",
       "type": "object",
       "properties": {
         "value": {
           "type": "string"
+        },
+        "vocabulary": {
+            "type": "string",
+            "format": "uri"
         }
       },
       "required": [
@@ -142,6 +147,7 @@
     },
     "geometryObject": {
       "title": "geometryObject",
+      "description": "IS THIS URI CORRECT: maybe http://raw.githubusercontent.com/peterataylor/om-json/master/geometry.json ??",
       "type": "object",
       "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json",
       "additionalProperties": false
