@@ -27,7 +27,18 @@
         }
       },
       "additionalProperties" : false,
+      "properties": {
+            "id": {},
+            "sampledFeature": {},
+            "relatedObservation": {},
+            "complex": {},
+            "type": {},
+            "shape": {},
+            "hostedProcedure": {}
+          },
       "required": [
+        "id",
+        "sampledFeature",
         "type",
         "shape"
       ]
