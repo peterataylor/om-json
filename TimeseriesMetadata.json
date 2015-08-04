@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json",
   "title": "TimeseriesMetadata",
   "description": "Schema for metadata relating to Timeseries",
   "type": "object",
