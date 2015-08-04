@@ -143,6 +143,7 @@
           "title":"source",
           "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         }
+      }
     }
   }
 }
