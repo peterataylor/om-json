@@ -34,9 +34,6 @@
       "title": "dateTime",
       "type": "string",
       "oneOf": [
-        {
-          "$ref": "#/properties/date-time"
-        },
         { "$ref": "#/properties/date" },
         { "$ref": "#/properties/g-year-month" },
         { "$ref": "#/properties/g-year" }
