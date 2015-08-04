@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "temporalExtent": {
+      "begin": "2010-01-01T00:00:00",
+      "end": "2010-01-03T00:00:00"
+    },
+    "status": {
+      "href": "http://"
+    },
+    "defaultPointMetadata": {
+      "interpolationType": {
+        "href": "http://www.opengis.net/def/waterml/2.0/interpolationType/Continuous"
+      },
+      "quality": {
+        "href": "http://www.opengis.net/def/waterml/2.0/quality/unchecked"
+      },
+      "uom" : "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#Meter"
+    }
+  },
+  "points": [
+    {
+      "time": {
+        "instant": "2010-01-01T00:00:00"
+      },
+      "value": {
+        "value": 3.2
+      }
+    },
+    {
+      "time": {
+        "instant": "2010-01-02T00:00:00"
+      },
+      "value": {
+        "value": 3.6
+      }
+    },
+    {
+      "time": {
+        "instant": "2010-01-03T00:00:00"
+      },
+      "value": {
+        "value": 3.9
+      }
+    }
+  ]
+}
