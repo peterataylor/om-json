@@ -85,6 +85,64 @@
           "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
         }
       }
+    },
+    "PointMetadata" : {
+      "type":"object",
+      "description":"Metadata for points in timeseries",
+      "properties" : {
+        "temporalExtent": {
+          "title":"temporalExtent",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "uom": {
+          "title":"uom",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "interpolationType": {
+          "title":"interpolationType",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "nilReason": {
+          "title":"nilReason",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "censoredReason": {
+          "title":"censoredReason",
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "comment": {
+          "title":"comment",
+          "type":"string"
+        },
+        "accuracy": {
+          "title":"accuracy",
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+        },
+        "relatedObservation": {
+          "title":"relatedObservation",
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        },
+        "aggregationDuration": {
+          "title":"aggregationDuration",
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+        },
+        "qualifier": {
+          "title":"qualifier",
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/qualifier"
+        },
+        "processing": {
+          "title":"processing",
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/processing"
+        },
+        "source": {
+          "title":"source",
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+        }
     }
   }
 }

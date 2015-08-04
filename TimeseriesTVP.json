@@ -6,12 +6,13 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "id"
+    "points"
   ],
   "definitions": {
     "TVPairMeasure" : {
-      "type:"object",
-      "description:"A time-value pair with a measure value.",
+      "type":"object",
+      "description":"A time-value pair with a measure value.",
+      "additionalProperties":"false",
       "properties" : {
         "time": {
           "type":"object",
@@ -20,12 +21,17 @@
         "value": {
           "type":"object",
           "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+        },
+        "metadata": {
+          "type":"object",
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/PointMetadata"
         }
       }
     },
     "TVPairCategory" : {
-      "type:"object",
-      "description:"A time-value pair with a catgeory result.",
+      "type":"object",
+      "description":"A time-value pair with a catgeory result.",
+      "additionalProperties":"false",
       "properties" : {
         "time": {
           "type":"object",
@@ -43,12 +49,12 @@
       "title": "metadata",
       "description": "Metadata about the timeseries.",
       "type": "object",
-      "$ref": ""
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/TimeseriesMetadata"
     },
     "defaultPointMetadata": {
       "title": "defaultPointMetadata",
       "description": "Default metadata for each point in the timeseries (can be over-ridden on a per-point basis).",
-      "$ref": ""
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/PointMetadata"
     },
     "points": {
       "title": "points",
