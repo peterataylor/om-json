@@ -10,8 +10,8 @@
   ],
   "definitions": {
     "TVPairMeasure" : {
-      "type:"object",
-      "description:"A time-value pair with a measure value.",
+      "type":"object",
+      "description":"A time-value pair with a measure value.",
       "properties" : {
         "time": {
           "type":"object",
@@ -24,8 +24,8 @@
       }
     },
     "TVPairCategory" : {
-      "type:"object",
-      "description:"A time-value pair with a catgeory result.",
+      "type":"object",
+      "description":"A time-value pair with a catgeory result.",
       "properties" : {
         "time": {
           "type":"object",
