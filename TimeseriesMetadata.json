@@ -133,11 +133,11 @@
         },
         "qualifier": {
           "title":"qualifier",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/qualifier"
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         "processing": {
           "title":"processing",
-          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/processing"
+          "type":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         },
         "source": {
           "title":"source",
