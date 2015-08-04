@@ -24,7 +24,7 @@
         },
         "metadata": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/PointMetadata"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/properties/PointMetadata"
         }
       }
     },
@@ -54,7 +54,7 @@
     "defaultPointMetadata": {
       "title": "defaultPointMetadata",
       "description": "Default metadata for each point in the timeseries (can be overridden on a per-point basis).",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/PointMetadata"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/properties/PointMetadata"
     },
     "points": {
       "title": "points",
