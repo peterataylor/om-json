@@ -9,6 +9,7 @@
     "TimeseriesMetadata" : {
       "type":"object",
       "description":"Metadata for the whole timeseries",
+      "additionalProperties": false,
       "properties" : {
         "temporalExtent": {
           "title":"temporalExtent",
@@ -87,6 +88,7 @@
     "PointMetadata" : {
       "type":"object",
       "description":"Metadata for points in timeseries",
+      "additionalProperties": false,
       "properties" : {
         "temporalExtent": {
           "title":"temporalExtent",
