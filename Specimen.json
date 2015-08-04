@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema#",
   "id": "http://waterml2.csiro.au/om-json/specimen.json",
   "title": "Specimen",
-  "description": "  ## EXTENDS SAMPLING FEATURE - DONE HERE BY CLONING ##  A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory.",
+  "description": "  ## EXTENDS SAMPLING FEATURE ##  A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory.",
   "type": "object",
   "allOf": [
     { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json#" },
