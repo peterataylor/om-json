@@ -4,12 +4,10 @@
   "title": "TimeseriesMetadata",
   "description": "Schema for metadata relating to Timeseries",
   "type": "object",
-  "additionalProperties": false,
   "definitions": {
     "TimeseriesMetadata" : {
       "type":"object",
       "description":"Metadata for the whole timeseries",
-      "additionalProperties": false,
       "properties" : {
         "temporalExtent": {
           "title":"temporalExtent",
@@ -83,12 +81,12 @@
           "description": "When any analysis is run over a timeseries it is important to know if it is possible to interpolate between any two adjoining points. If the join period between two adjoining points is greater than the maxGapPeriod then the series should not be interpolated between these adjoining points.",
           "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "PointMetadata" : {
       "type":"object",
       "description":"Metadata for points in timeseries",
-      "additionalProperties": false,
       "properties" : {
         "temporalExtent": {
           "title":"temporalExtent",
@@ -143,7 +141,9 @@
           "title":"source",
           "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
         }
-      }
+      },
+      "additionalProperties": false
     }
-  }
+  },
+  "additionalProperties": false
 }
