@@ -43,9 +43,7 @@
       "properties": {
         "instant": { "ref": "#/definitions/dateTime" }
       },
-      "required": [
-        "instant"
-      ],
+      "required": [ "instant" ],
       "additionalProperties": false
     },
     "dateTimePeriod": { 
@@ -53,71 +51,53 @@
       "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
       "type": "object",
       "properties": {
-        "begin": {
-          "$ref": "#/definitions/dateTime"
-        },
-        "end": {
-          "$ref": "#/definitions/dateTime"
-        }
+        "begin": { "$ref": "#/definitions/dateTime" },
+        "end":   { "$ref": "#/definitions/dateTime" }
       }, 
       "additionalProperties": false
     },
     "temporalPrimitive": {
       "title": "temporalPrimitive",
       "oneOf": [
-        { "$ref": "#/definitions/dateTimePeriod"  },
-        { "$ref": "#/definitions/dateTimeInstant" }
+        { "$ref": "#/definitions/dateTimeInstant" },
+        { "$ref": "#/definitions/dateTimePeriod"  }
       ]   
     },
     "temporalObject": {
       "title": "temporalObject",
       "oneOf": [
-        { "$ref": "#/definitions/dateTimePeriod"  },
         { "$ref": "#/definitions/dateTimeInstant" },
+        { "$ref": "#/definitions/dateTimePeriod"  },
         { "$ref": "#/definitions/duration"        }
       ]
     },
     "measure": {
       "title": "measure",
-      "description": "make uom optional, to support the case where a common uom is used in a collection",
+      "description": "scaled number - uom is optional, to support the case where a common uom is used in a collection",
       "type": "object",
       "properties": {
-        "value": {
-          "type": "number"
-        },
-        "uom": {
-          "type": "string"
-        }
+        "value": { "type": "number" },
+        "uom": { "type": "string" }
       },
-      "required": [
-        "value"
-      ],
+      "required": [ "value" ],
       "additionalProperties": false
     },
     "boolean": {
       "title": "boolean",
       "type": "object",
       "properties": {
-        "value": {
-          "type": "boolean"
-        }
+        "booleanvalue": { "type": "boolean" }
       },
-      "required": [
-        "value"
-      ],
+      "required": [ "booleanvalue" ],
       "additionalProperties": false
     },
     "count": {
       "title": "count",
       "type": "object",
       "properties": {
-        "value": {
-          "type": "integer"
-        }
+        "integervalue": { "type": "integer" }
       },
-      "required": [
-        "value"
-      ],
+      "required": [ "integervalue" ],
       "additionalProperties": false
     },
     "text": {
@@ -125,17 +105,10 @@
       "description": "string with optional vocabulary source",
       "type": "object",
       "properties": {
-        "value": {
-          "type": "string"
-        },
-        "vocabulary": {
-            "type": "string",
-            "format": "uri"
-        }
+        "textvalue": { "type": "string" },
+        "vocabulary": { "type": "string", "format": "uri" }
       },
-      "required": [
-        "value"
-      ],
+      "required": [ "textvalue" ],
       "additionalProperties": false
     },
     "geometryObject": {
@@ -154,21 +127,11 @@
       "title": "link",
       "type": "object",
       "properties": {
-        "href": {
-          "type": "string",
-          "format": "uri"
-        },
-        "rel": {
-          "type": "string",
-          "format": "uri"
-        },
-        "title": {
-          "type": "string"
-        }
+        "href": { "type": "string", "format": "uri" },
+        "rel": { "type": "string", "format": "uri" },
+        "title": { "type": "string" }
       },
-      "required": [
-        "href"
-      ],
+      "required": [ "href" ],
       "additionalProperties":false
     },
     "linkOrObject": {
