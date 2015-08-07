@@ -101,18 +101,6 @@
       "required": [ "term" ],
       "additionalProperties": false
     },
-    "geometryObject": {
-      "title": "geometryObject",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json",
-      "additionalProperties": false
-    },
-    "new-duration": {
-      "title": "new-duration",
-      "oneOf": [
-        { "$ref": "#/definitions/duration" },
-        { "$ref": "#/definitions/measure"  }
-      ]
-    },
     "link": {
       "title": "link",
       "type": "object",
