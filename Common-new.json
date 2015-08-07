@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json",
   "title": "Common",
   "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
   "definitions": {
