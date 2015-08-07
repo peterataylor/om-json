@@ -54,6 +54,7 @@
         "begin": { "$ref": "#/definitions/dateTime" },
         "end":   { "$ref": "#/definitions/dateTime" }
       }, 
+      "required": [ "begin" , "end" ],
       "additionalProperties": false
     },
     "temporalPrimitive": {
