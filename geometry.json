@@ -3,29 +3,30 @@
     "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json",
     "title": "geometry",
     "description": "One geometry as defined by GeoJSON",
-    "type": "object",
-    "required": [ "type", "coordinates" ],
     "oneOf": [
         {
             "title": "Point",
             "properties": {
                 "type": { "enum": [ "Point" ] },
                 "coordinates": { "$ref": "#/definitions/position" }
-            }
+            },
+            "required": [ "type", "coordinates" ]
         },
         {
             "title": "MultiPoint",
             "properties": {
                 "type": { "enum": [ "MultiPoint" ] },
                 "coordinates": { "$ref": "#/definitions/positionArray" }
-            }
+            },
+            "required": [ "type", "coordinates" ]
         },
         {
             "title": "LineString",
             "properties": {
                 "type": { "enum": [ "LineString" ] },
                 "coordinates": { "$ref": "#/definitions/lineString" }
-            }
+            },
+            "required": [ "type", "coordinates" ]
         },
         {
             "title": "MultiLineString",
@@ -35,14 +36,16 @@
                     "type": "array",
                     "items": { "$ref": "#/definitions/lineString" }
                 }
-            }
+            },
+            "required": [ "type", "coordinates" ]
         },
         {
             "title": "Polygon",
             "properties": {
                 "type": { "enum": [ "Polygon" ] },
                 "coordinates": { "$ref": "#/definitions/polygon" }
-            }
+            },
+            "required": [ "type", "coordinates" ]
         },
         {
             "title": "MultiPolygon",
@@ -52,7 +55,8 @@
                     "type": "array",
                     "items": { "$ref": "#/definitions/polygon" }
                 }
-            }
+            },
+            "required": [ "type", "coordinates" ]
         }
     ],
     "definitions": {
