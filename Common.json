@@ -4,7 +4,7 @@
   "title": "Common",
   "description": "A collection of commonly used types, such as date times, quantities etc. Should come from somehwere else, one day.",
   "type": "object",
-  "properties": {
+  "definitions": {
     "date": {
       "title": "date",
       "type": "string",
@@ -34,16 +34,16 @@
       "title": "dateTime",
       "type": "string",
       "oneOf": [
-        { "$ref": "#/properties/date" },
-        { "$ref": "#/properties/g-year-month" },
-        { "$ref": "#/properties/g-year" }
+        { "$ref": "#/definitions/date" },
+        { "$ref": "#/definitions/g-year-month" },
+        { "$ref": "#/definitions/g-year" }
       ]
     },
     "dateTimeInstant": {
       "title": "dateTimeInstant",
       "type": "object",
       "properties": {
-        "instant": { "ref": "#/properties/dateTime" }
+        "instant": { "ref": "#/definitions/dateTime" }
       },
       "required": [
         "instant"
@@ -56,10 +56,10 @@
       "type": "object",
       "properties": {
         "begin": {
-          "$ref": "#/properties/dateTime"
+          "$ref": "#/definitions/dateTime"
         },
         "end": {
-          "$ref": "#/properties/dateTime"
+          "$ref": "#/definitions/dateTime"
         }
       }, 
       "additionalProperties": false
@@ -68,17 +68,17 @@
       "title": "temporalPrimitive",
       "type": "object",
       "oneOf": [
-        { "$ref": "#/properties/dateTimePeriod"  },
-        { "$ref": "#/properties/dateTimeInstant" }
+        { "$ref": "#/definitions/dateTimePeriod"  },
+        { "$ref": "#/definitions/dateTimeInstant" }
       ]
     },
     "temporalObject": {
       "title": "temporalObject",
       "type": "object",
       "oneOf": [
-        { "$ref": "#/properties/dateTimePeriod"  },
-        { "$ref": "#/properties/dateTimeInstant" },
-        { "$ref": "#/properties/duration"        }
+        { "$ref": "#/definitions/dateTimePeriod"  },
+        { "$ref": "#/definitions/dateTimeInstant" },
+        { "$ref": "#/definitions/duration"        }
       ]
     },
     "measure": {
@@ -145,7 +145,6 @@
     "geometryObject": {
       "title": "geometryObject",
       "description": "IS THIS URI CORRECT: maybe http://raw.githubusercontent.com/peterataylor/om-json/master/geometry.json ??",
-      "type": "object",
       "$ref": "http://gist.githubusercontent.com/peterataylor/47bcd797e0ef3ac92341/raw/fb6e7428791e9afa6c8c05c5be1f5a20c8e043c1/geometry.json",
       "additionalProperties": false
     },
@@ -153,8 +152,8 @@
       "title": "new-duration",
       "type": "object",
       "oneOf": [
-        { "$ref": "#/properties/duration" },
-        { "$ref": "#/properties/measure"  }
+        { "$ref": "#/definitions/duration" },
+        { "$ref": "#/definitions/measure"  }
       ],
       "additionalProperties": false
     },
@@ -183,8 +182,8 @@
       "title": "linkOrObject",
       "type": "object",
       "anyOf": [
-        { "$ref": "#/properties/link" },
-        { "type": "object"            }
+        { "$ref": "#/definitions/link" },
+        { "type": "object"             }
       ]
     }
   }
