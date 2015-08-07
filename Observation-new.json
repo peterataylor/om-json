@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Observation.json",
+  "title": "Observation",
+  "description": "An observation is an act associated with a discrete time instant or period through which a number, term or other symbol is assigned to a phenomenon. It involves application of a specified procedure, such as a sensor, instrument, algorithm or process chain. The procedure may be applied in-situ, remotely, or ex-situ with respect to the sampling location. The result of an observation is an estimate of the value of a property of some feature. Use of a common model allows observation data using different procedures to be combined unambiguously. The observation itself is also a feature, since it has properties and identity. Observation details are important for data discovery and for data quality estimation. The observation could be considered to carry âproperty-levelâ instance metadata, which complements the dataset-level and feature-level metadata that have been conventionally considered (e.g. ISO 19115)",
+  "type": "object",
+  "properties": {
+    "id": {
+      "title": "id",
+      "description": "A unique identifier for the observation",
+      "type": "string"
+    },
+    "type": {
+      "title": "type",
+      "description": "Identifies the type of observation, which determines the type of the result property",
+      "type": "string"
+    },
+    "phenomenonTime": {
+      "title": "phenomenonTime",
+      "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/temporalPrimitive"
+    },
+    "observedProperty": {
+      "title": "observedProperty",
+      "description": "property whose value is the result of the observation",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/link"
+    },
+    "procedure": {
+      "title": "procedure",
+      "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure.",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/link"
+    },
+    "featureOfInterest": {
+      "title": "featureOfInterest",
+      "description": "subject of the observation, whose type may carry the observed property",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/linkOrObject"
+    },
+    "samplingStrategy": {
+      "title": "samplingStrategy",
+      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/linkOrObject"
+    },
+    "resultTime": {
+      "title": "resultTime",
+      "description": "time at which the result became available, after all processing steps were completed",
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "title": "context",
+      "description": "links to observations that provide the context for this observation - use 'rel' for 'role'",
+      "type": "array",
+      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/link" }
+    },
+    "result": {
+      "title": "result",
+      "description": "result of the observation",
+      "oneOf": [
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/link"           },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/measure"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/text"           },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/truth"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/count"          },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/geometryObject" },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common-new.json#/definitions/temporalObject" }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "phenomenonTime",
+    "result"
+  ],
+  "additionalProperties": false
+}
