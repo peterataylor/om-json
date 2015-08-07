@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry-new.json",
+    "title": "geometry",
+    "description": "One geometry as defined by GeoJSON",
+    "definitions": {
+        "position": {
+            "description": "A single position",
+            "type": "array",
+            "minItems": 2,
+            "items": [ { "type": "number" }, { "type": "number" } ],
+            "additionalItems": false
+        },
+        "positionArray": {
+            "description": "An array of positions",
+            "type": "array",
+            "items": { "$ref": "#/definitions/position" }
+        },
+        "lineString": {
+            "description": "An array of two or more positions",
+            "allOf": [
+                { "$ref": "#/definitions/positionArray" },
+                { "minItems": 2 }
+            ]
+        },
+        "linearRing": {
+            "description": "An array of four positions where the first equals the last",
+            "allOf": [
+                { "$ref": "#/definitions/positionArray" },
+                { "minItems": 4 }
+            ]
+        },
+        "polygon": {
+            "description": "An array of linear rings",
+            "type": "array",
+            "items": { "$ref": "#/definitions/linearRing" }
+        },
+        "geometry": {
+          "oneOf": [
+              {
+                  "title": "Point",
+                  "properties": {
+                      "type": { "enum": [ "Point" ] },
+                      "coordinates": { "$ref": "#/definitions/position" }
+                  },
+                  "required": [ "type", "coordinates" ]
+              },
+              {
+                  "title": "MultiPoint",
+                  "properties": {
+                      "type": { "enum": [ "MultiPoint" ] },
+                      "coordinates": { "$ref": "#/definitions/positionArray" }
+                  },
+                  "required": [ "type", "coordinates" ]
+              },
+              {
+                  "title": "LineString",
+                  "properties": {
+                      "type": { "enum": [ "LineString" ] },
+                      "coordinates": { "$ref": "#/definitions/lineString" }
+                  },
+                  "required": [ "type", "coordinates" ]
+              },
+              {
+                  "title": "MultiLineString",
+                  "properties": {
+                      "type": { "enum": [ "MultiLineString" ] },
+                      "coordinates": {
+                          "type": "array",
+                          "items": { "$ref": "#/definitions/lineString" }
+                      }
+                  },
+                  "required": [ "type", "coordinates" ]
+              },
+              {
+                  "title": "Polygon",
+                  "properties": {
+                      "type": { "enum": [ "Polygon" ] },
+                      "coordinates": { "$ref": "#/definitions/polygon" }
+                  },
+                  "required": [ "type", "coordinates" ]
+              },
+              {
+                  "title": "MultiPolygon",
+                  "properties": {
+                      "type": { "enum": [ "MultiPolygon" ] },
+                      "coordinates": {
+                          "type": "array",
+                          "items": { "$ref": "#/definitions/polygon" }
+                      }
+                  },
+                  "required": [ "type", "coordinates" ]
+              }
+          ]
+        }
+    }
+}
