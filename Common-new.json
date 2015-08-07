@@ -60,15 +60,15 @@
       "title": "temporalPrimitive",
       "oneOf": [
         { "$ref": "#/definitions/dateTimeInstant" },
-        { "interval": { "$ref": "#/definitions/dateTimePeriod"  } }
+        { "$ref": "#/definitions/dateTimePeriod"  } 
       ]   
     },
     "temporalObject": {
       "title": "temporalObject",
       "oneOf": [
+        { "$ref": "#/definitions/duration"        },
         { "$ref": "#/definitions/dateTimeInstant" },
-        { "$ref": "#/definitions/dateTimePeriod"  },
-        { "$ref": "#/definitions/duration"        }
+        { "$ref": "#/definitions/dateTimePeriod"  } 
       ]
     },
     "measure": {

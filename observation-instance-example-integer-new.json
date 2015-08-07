@@ -1,0 +1,10 @@
+{
+  "id":"integer observation test",
+  "type": "CountObservation",
+  "phenomenonTime": { "instant":"sdfsd2015-05-11T00:00:00+10:00"},
+  "observedProperty": {"href": "http://environment.data.gov.au/def/property/bacteria_total"},
+  "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Manual"},
+  "featureOfInterest": {"href":"waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
+  "resultTime": "2015-05-12Tsdf09:00:00+10:00",
+  "result": 3
+}
