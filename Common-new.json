@@ -54,14 +54,13 @@
         "begin": { "$ref": "#/definitions/dateTime" },
         "end":   { "$ref": "#/definitions/dateTime" }
       }, 
-      "required": [ "begin" , "end" ],
       "additionalProperties": false
     },
     "temporalPrimitive": {
       "title": "temporalPrimitive",
       "oneOf": [
         { "$ref": "#/definitions/dateTimeInstant" },
-        { "$ref": "#/definitions/dateTimePeriod"  }
+        { "interval": { "$ref": "#/definitions/dateTimePeriod"  } }
       ]   
     },
     "temporalObject": {
