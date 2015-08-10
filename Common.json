@@ -113,7 +113,7 @@
     },
     "geometryObject": {
       "title": "geometryObject",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/geometry.json",
       "additionalProperties": false
     },
     "new-duration": {
