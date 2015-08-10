@@ -1,5 +1,6 @@
 {
   "id": "sample1",
+  "type": "basic",
   "sampledFeature": {
     "href": "http://example.org/featureA",
     "title": "test feature A"
