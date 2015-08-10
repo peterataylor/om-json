@@ -18,17 +18,17 @@
     "phenomenonTime": {
       "title": "phenomenonTime",
       "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/common.json#/definitions/temporalPrimitive"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
     },
     "observedProperty": {
       "title": "observedProperty",
       "description": "property whose value is the result of the observation",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/common.json#/definitions/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "procedure": {
       "title": "procedure",
       "description": "procedure used in making observation. Typically a sensor or sensor-system, algorithm, computational procedure.",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/common.json#/definitions/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "featureOfInterest": {
       "title": "featureOfInterest",
@@ -56,13 +56,13 @@
       "title": "result",
       "description": "result of the observation",
       "oneOf": [
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"           },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"        },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/text"           },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/boolean"        },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/count"          },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/geometryObject" },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalObject" }
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"             },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"          },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabterm"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/truth"            },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/count"            },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalObject"   },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject" }
       ]
     }
   },
