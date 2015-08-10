@@ -1,6 +1,6 @@
 {
     "id": "boolean-test-instance",
-    "type": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TruthObservation",
+    "type": "TruthObservation",
     "phenomenonTime": {
         "instant": "2011-05-11T00:00:00+10:00"
     },
