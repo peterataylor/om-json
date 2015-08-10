@@ -71,6 +71,10 @@
         { "$ref": "#/definitions/dateTimeInterval"  } 
       ]
     },
+    "count": {
+      "title": "count",
+      "type": "integer"
+    },
     "measure": {
       "title": "measure",
       "description": "scaled number - uom is optional, to support the case where a common uom is used in a collection",
@@ -82,16 +86,16 @@
       "required": [ "value" ],
       "additionalProperties": false
     },
+    "text": {
+      "title": "text",
+      "type": "string"
+    },
     "truth": {
       "title": "truth",
       "type": "boolean"
     },
-    "count": {
-      "title": "count",
-      "type": "integer"
-    },
-    "vocabterm": {
-      "title": "vocabterm",
+    "vocabTerm": {
+      "title": "vocabTerm",
       "description": "term with optional vocabulary source",
       "type": "object",
       "properties": {
