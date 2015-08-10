@@ -58,7 +58,7 @@
       "oneOf": [
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"             },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"          },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabterm"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabTerm"        },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/truth"            },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/count"            },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalObject"   },
