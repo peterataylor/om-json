@@ -35,6 +35,7 @@
   },
   "required": [
     "id",
+    "type",
     "sampledFeature"
   ]
 }
