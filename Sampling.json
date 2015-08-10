@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/sampling.json",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json",
   "title": "Sampling feature",
   "description": "Feature on which observations may be made, which is intended to be representative of a different (usually larger) feature that is not fully accessible for some reason.",
   "type": "object",
@@ -35,7 +35,6 @@
   },
   "required": [
     "id",
-    "type", 
     "sampledFeature"
   ]
 }
