@@ -41,7 +41,7 @@
       "title": "dateTimeInstant",
       "type": "object",
       "properties": {
-        "instant": { "ref": "#/definitions/dateTime" }
+        "instant": { "$ref": "#/definitions/dateTime" }
       },
       "required": [ "instant" ],
       "additionalProperties": false
