@@ -99,5 +99,9 @@
               }
           ]
         }
+    },
+    "properties": {
+        "geometry": { "$ref": "#/definitions/geometryObject"},
+        "required": [ "geometry" ]        
     }
 }
