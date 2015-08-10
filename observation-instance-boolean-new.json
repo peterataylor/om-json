@@ -2,7 +2,7 @@
     "id": "boolean-test-instance",
     "type": "TruthObservation",
     "phenomenonTime": {
-        "instant": "2011-05-11T00:00:00+10:00"
+        "instant": "2011-05-11"
     },
     "observedProperty": {
         "href": "urn:example:Truth"

@@ -1,7 +1,7 @@
 {
   "id": "linestring-example",
   "type": "GeometryObservation",
-  "phenomenonTime": { "instant":"2011-05-11T00:00:00+10:00"},
+  "phenomenonTime": { "instant":"2011-05-11"},
   "observedProperty": { "href":"http://environment.data.gov.au/def/property/shape"},
   "procedure": { "href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
   "featureOfInterest": { "href":"http://environment.data.gov.au/water/id/catchment/100862", "title":"Observed line through catchment"},

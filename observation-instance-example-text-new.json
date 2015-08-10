@@ -1,7 +1,7 @@
 {
   "id":"text-observation-instance",
   "type": "CategoryObservation",
-  "phenomenonTime": { "instant":"2015-05-11T00:00:00+10:00"},
+  "phenomenonTime": { "instant":"2015-05-11"},
   "observedProperty": {"href": "http://environment.data.gov.au/def/property/taxon"},
   "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Manual"},
   "featureOfInterest": {"href":"http://example.org/sighting345"},

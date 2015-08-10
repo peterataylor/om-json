@@ -1,7 +1,7 @@
 {
   "id":"measure-instance-test",
   "type" : "Measurement",
-  "phenomenonTime": { "instant":"2011-05-11T00:00:00+10:00" },
+  "phenomenonTime": { "instant":"2011-05-11" },
   "observedProperty": {"href":"http://environment.data.gov.au/def/property/air_temperature"},
   "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
   "featureOfInterest": {"href":"http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
