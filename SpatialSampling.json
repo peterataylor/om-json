@@ -11,7 +11,7 @@
         "shape": {
           "title": "shape",
           "description": "Spatial location and extent of the sampling feature",
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject"
         },
         "hostedProcedure": {
           "title": "hostedProcedure",
