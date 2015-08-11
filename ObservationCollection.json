@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://waterml2.csiro.au/om-json/observation-collection.json",
   "title": "Observation collection",
   "description": "Collection of observations which may have a common (a) feature of interest (b) observed property (c) observation procedure.",

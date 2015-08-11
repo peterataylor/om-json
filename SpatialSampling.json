@@ -1,19 +1,13 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "id": "http://waterml2.csiro.au/om-json/spatial-sampling.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/SpatialSampling.json",
   "title": "Spatial Sampling Feature",
   "description": "  ## EXTENDS SAMPLING FEATURE ##  Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting. ",
   "type": "object",
   "allOf": [
-    { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json#" },
+    { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" },
     {
       "properties": {
-        "type": {
-          "title": "type",
-          "description": "Identifies the type of spatial sampling feature, which determines the type of the shape property",
-          "type": "string",
-          "format": "uri"
-        },
         "shape": {
           "title": "shape",
           "description": "Spatial location and extent of the sampling feature",
@@ -30,6 +24,7 @@
   ],
   "properties": {
     "id": {},
+    "type": { "enum": [ "SamplingPoint" , "SamplingCurve" , "SamplingSurface" , "SamplingSolid" ] },
     "sampledFeature": {},
     "relatedObservation": {},
     "complex": {},
@@ -40,8 +35,8 @@
  "additionalProperties" : false,
   "required": [
     "id",
-    "sampledFeature",
     "type",
+    "sampledFeature",
     "shape"
   ]
 }

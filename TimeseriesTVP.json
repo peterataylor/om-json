@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesTVP.json",
   "title": "TimeseriesTVP",
   "description": "A TimeseriesML time-value pair encoded timeseries",
@@ -11,11 +11,11 @@
       "properties" : {
         "time": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
         },
         "value": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"
         },
         "metadata": {
           "type":"object",
@@ -30,11 +30,11 @@
       "properties" : {
         "time": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
         },
         "value": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/text"
         }
       },
       "additionalProperties":"false"
