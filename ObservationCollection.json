@@ -15,24 +15,24 @@
       "type": "string"
     },
     "featureOfInterest": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
       "description": "the single feature which all observations in the collection are concerned with"
     },
     "procedure": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "featureOfInterest",
       "description": "the observation procedure used in all observations in the collection"
     },
     "observedProperty": {
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
       "title": "observedProperty",
       "description": "the property measured or estimated by all observations in the collection"
     },
     "member": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
+        "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
       },
       "minItems": 1,
       "uniqueItems": true,
