@@ -15,14 +15,14 @@
       "type": "string"
     },
     "sampledFeature": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
       "title": "sampledFeature",
       "description": "the feature which the sampling feature collection was designed to sample"
     },
     "member": {
       "type": "array",
       "items": {
-        "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/linkOrObject"
+        "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject"
       },
       "minItems": 1,
       "uniqueItems": true,
