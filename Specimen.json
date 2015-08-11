@@ -7,40 +7,40 @@
   "properties": {
     "specimen": { 
       "allOf": [
-        { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" },
         { 
           "properties": {
             "samplingTime": {
               "title": "samplingTime",
               "description": "time the specimen was taken from the sampled feature",
-              "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
+              "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/temporalPrimitive"
             },
             "samplingMethod": {
               "title": "samplingMethod",
               "description": "Process used to take the specimen from the sampled feature.",
-              "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+              "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
             },
             "samplingLocation": {
               "title": "samplingLocation",
               "description": "Location from which the specimen was taken within the sampled feature",
               "oneOf": [
-                { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"           },
-                { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/properties/geometryObject" }
+                { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"           },
+                { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/properties/geometryObject" }
               ]
             },
             "currentLocation": {
               "title": "currentLocation",
               "description": "Location where the specimen is currently",
               "oneOf": [
-                { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"           },
-                { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"           },
-                { "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/properties/geometryObject" }
+                { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"           },
+                { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/text"           },
+                { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/properties/geometryObject" }
               ]
             },
             "size": {
               "title": "size",
               "description": "Physical extent of the specimen (length, mass, etc)",
-              "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+              "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
             }
           },
           "required": [ "samplingTime" ]

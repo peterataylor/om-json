@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://raw.githubusercontent.com/peterataylor/om-json/master/MonitoringFeature.json",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/MonitoringFeature.json",
   "title": "MonitoringFeature",
   "description": "A TimeseriesML MonitoringFeature",
   "type": "object",
@@ -32,7 +32,7 @@
     "representativePoint": {
       "title": "representativePoint",
       "description": "A point location that is representative of the monitoring feature's location. Typically this is used when the shape of the monitoring feature is an area or other non-point geometry. It may also be used to provide an approximate point location in sensitive observation scenarios.",
-      "$ref": "https://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
     },
     "monitoringType": {
       "title": "monitoringType",
