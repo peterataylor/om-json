@@ -43,8 +43,7 @@
     "resultTime": {
       "title": "resultTime",
       "description": "time at which the result became available, after all processing steps were completed",
-      "type": "string",
-      "format": "date-time"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimeInstant"
     },
     "context": {
       "title": "context",

@@ -12,17 +12,17 @@
         "temporalExtent": {
           "title":"temporalExtent",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimePeriod"
         },
         "baseTime": {
           "title":"baseTime",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimeInstant"
         },
         "spacing": {
           "title":"spacing",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/duration"
         },
         "commentBlock" : {
           "title" : "commentBlock",
@@ -30,7 +30,7 @@
           "properties" : {
             "applicablePeriod" : {
               "type":"object",
-              "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimePeriod"
+              "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimePeriod"
             },
             "comment" : {
               "type" : "string"
@@ -48,13 +48,13 @@
           "title":"intendedObservationSpacing",
           "description": "The extent of the temporal domain of the timeseries. As the domain of the timeseries is temporal, the temporalExtent is a time period defining the start and end of its temporal domain (i.e. the start and end of the timeseries). Note that this often the same as the phenomenon time as specified in the OM_Observation; it is still useful here for timeseries that are described separately from an OM_Observation header.",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/duration"
         },
         "status": {
           "title":"status",
           "description": "Indicates the statues of the observation. E.g. unreleased, verified etc.",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "cumulative": {
           "title":"cumulative",
@@ -64,22 +64,22 @@
         "accumulationAnchorTime": {
           "title":"accumulationAnchorTime",
           "description": "Defines the time at which accumulation begins. e.g. 9am.",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimeInstant"
         },
         "startAnchorPoint": {
           "title":"startAnchorPoint",
           "description": "Specifies a ‘ghost’ point to allow the first value of the timeseries to be interpolated correctly.",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimeInstant"
         },
         "endAnchorPoint": {
           "title":"endAnchorPoint",
           "description": "Specifies a ‘ghost’ point to allow the last value of the timeseries to be interpolated correctly.",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/dateTimeInstant"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/dateTimeInstant"
         },
         "maxGapPeriod": {
           "title":"maxGapPeriod",
           "description": "When any analysis is run over a timeseries it is important to know if it is possible to interpolate between any two adjoining points. If the join period between two adjoining points is greater than the maxGapPeriod then the series should not be interpolated between these adjoining points.",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/duration"
         }
       },
       "additionalProperties": false
@@ -91,27 +91,27 @@
         "temporalExtent": {
           "title":"temporalExtent",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "uom": {
           "title":"uom",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "interpolationType": {
           "title":"interpolationType",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "nilReason": {
           "title":"nilReason",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "censoredReason": {
           "title":"censoredReason",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "comment": {
           "title":"comment",
@@ -119,27 +119,27 @@
         },
         "accuracy": {
           "title":"accuracy",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/measure"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"
         },
         "relatedObservation": {
           "title":"relatedObservation",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "aggregationDuration": {
           "title":"aggregationDuration",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/duration"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/duration"
         },
         "qualifier": {
           "title":"qualifier",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "processing": {
           "title":"processing",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         },
         "source": {
           "title":"source",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
         }
       },
       "additionalProperties": false

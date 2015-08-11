@@ -32,22 +32,22 @@
     "representativePoint": {
       "title": "representativePoint",
       "description": "A point location that is representative of the monitoring feature's location. Typically this is used when the shape of the monitoring feature is an area or other non-point geometry. It may also be used to provide an approximate point location in sensitive observation scenarios.",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/geometryObject"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/geometryObject"
     },
     "monitoringType": {
       "title": "monitoringType",
       "description": "A thematic characterisation of the type of monitoring feature. E.g. meteorological, surface water, groundwater, water quality etc.",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "descriptionReference": {
       "title": "descriptionReference",
       "description": "Provide extra descriptive information about a monitoring feature. This could be a link to an HTML page describing the location, photos of a monitoring point, history records etc.",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "verticalDatum": {
       "title": "verticalDatum",
       "description": "Specifies the elevation that is used as the zero point, or datum, for height-related measurements. The datum is defined using a vertical datum, which may be defined using the ISO19111 type CD_VerticalDatum, or an agreed upon datum may be reference by its identifier. E.g. the Australian Height Datum (AHD), Tasmania = “EPSG::5112”. The CD_VerticalDatum type allows specification of the local vertical datum as a height above another reference datum. E.g. local vertical datum is 23m above the AHD.",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/properties/link"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "timeZone": {
       "title": "timeZone",

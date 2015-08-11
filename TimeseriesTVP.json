@@ -47,7 +47,7 @@
             "metadata": {
                 "title": "metadata",
                 "description": "Metadata about the timeseries.",
-                "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/properties/TimeseriesMetadata"
+                "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/definitions/TimeseriesMetadata"
             },
             "defaultPointMetadata": {
                 "title": "defaultPointMetadata",
