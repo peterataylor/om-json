@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json",
     "title": "geometry",
-    "description": "One geometry as defined by GeoJSON",
+    "description": "One geometry object, as defined in GeoJSON",
     "definitions": {
         "position": {
             "description": "A single position",
