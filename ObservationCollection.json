@@ -44,6 +44,16 @@
       "description": "time at which the result became available, after all processing steps were completed",
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/date-time"
     },
+    "uom": { 
+      "title": "unit-of-measure", 
+      "description": "unit of measure for all quantitative result values",
+      "type": "string" 
+    },
+    "vocabulary": { 
+      "title": "vocabulary", 
+      "description": "vocabulary for all categorical result values",
+      "type": "string" 
+    },
     "member": {
       "type": "array",
       "items": {
