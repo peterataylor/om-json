@@ -1,20 +1,18 @@
 {
-    "id": "boolean-test-instance",
-    "type": "TruthObservation",
-    "phenomenonTime": {
-        "instant": "2011-05-11T00:00:00+10:00"
-    },
-    "observedProperty": {
-        "href": "urn:example:Truth"
-    },
-    "procedure": {
-        "href": "http://www.opengis.net/def/waterml/2.0/processType/Manual"
-    },
-    "featureOfInterest": {
-        "href": "http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"
-    },
-    "resultTime": "2011-05-12T09:00:00+10:00",
-    "result": {
-        "value": true
-    }
+  "id": "boolean-test-instance",
+  "type": "TruthObservation",
+  "phenomenonTime": {
+    "instant": "2011-05-11T00:00:00+10:00"
+  },
+  "observedProperty": {
+    "href": "urn:example:Truth"
+  },
+  "procedure": {
+    "href": "http://www.opengis.net/def/waterml/2.0/processType/Manual"
+  },
+  "featureOfInterest": {
+    "href": "http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"
+  },
+  "resultTime": { "instant": "2011-05-12T09:00:00+10:00" },
+  "result": true 
 }
