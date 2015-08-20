@@ -24,15 +24,11 @@
       "type": "string",
       "pattern": "^([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$"
     },
-    "duration": {
-      "title": "duration",
-      "type": "string",
-      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
-    },
-    "dateTime": {
+    "dateTimePosition": {
       "title": "dateTime",
       "oneOf": [
         { "$ref": "#/definitions/date" },
+        { "$ref": "#/definitions/date-time" },
         { "$ref": "#/definitions/g-year-month" },
         { "$ref": "#/definitions/g-year" }
       ]
@@ -41,7 +37,7 @@
       "title": "dateTimeInstant",
       "type": "object",
       "properties": {
-        "instant": { "$ref": "#/definitions/dateTime" }
+        "instant": { "$ref": "#/definitions/dateTimePosition" }
       },
       "required": [ "instant" ],
       "additionalProperties": false
@@ -51,8 +47,8 @@
       "description": "A time period has a begin and end. Either may be omitted for a single-ended interval.",
       "type": "object",
       "properties": {
-        "begin": { "$ref": "#/definitions/dateTime" },
-        "end":   { "$ref": "#/definitions/dateTime" }
+        "begin": { "$ref": "#/definitions/dateTimePosition" },
+        "end":   { "$ref": "#/definitions/dateTimePosition" }
       }, 
       "additionalProperties": false
     },
@@ -62,6 +58,11 @@
         { "$ref": "#/definitions/dateTimeInstant" },
         { "$ref": "#/definitions/dateTimeInterval"  } 
       ]   
+    },
+    "duration": {
+      "title": "duration",
+      "type": "string",
+      "pattern": "-?P[0-9]+Y?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"
     },
     "temporalObject": {
       "title": "temporalObject",
@@ -73,7 +74,7 @@
     }
   },
   "properties": {
-        "time": { "$ref": "#/definitions/temporalObject" },
-        "required": [ "time" ]        
-  }
+        "time": { "$ref": "#/definitions/temporalObject" }        
+  },
+  "required": [ "time" ]
 }

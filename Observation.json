@@ -18,7 +18,7 @@
     "phenomenonTime": {
       "title": "phenomenonTime",
       "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
     },
     "observedProperty": {
       "title": "observedProperty",
@@ -43,7 +43,7 @@
     "resultTime": {
       "title": "resultTime",
       "description": "time at which the result became available, after all processing steps were completed",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/date-time"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/date-time"
     },
     "context": {
       "title": "context",
@@ -53,22 +53,9 @@
     },
     "result": {
       "title": "result",
-      "description": "result of the observation",
-      "oneOf": [
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"             },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"          },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabTerm"        },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/truth"            },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/count"            },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalObject"   },
-        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject" }
-      ]
+      "description": "result of the observation"
     }
   },
-  "required": [
-    "id",
-    "phenomenonTime",
-    "result"
-  ],
+  "required": [ "id", "phenomenonTime", "result" ],
   "additionalProperties": false
 }

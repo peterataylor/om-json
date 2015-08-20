@@ -14,20 +14,35 @@
       "description": "A unique identifier for the observation collection",
       "type": "string"
     },
-    "featureOfInterest": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
-      "title": "featureOfInterest",
-      "description": "the single feature which all observations in the collection are concerned with"
-    },
     "procedure": {
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
       "title": "featureOfInterest",
       "description": "the observation procedure used in all observations in the collection"
     },
+    "featureOfInterest": {
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
+      "title": "featureOfInterest",
+      "description": "the single feature which all observations in the collection are concerned with"
+    },
+    "samplingStrategy": {
+      "title": "samplingStrategy",
+      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject"
+    },
     "observedProperty": {
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
       "title": "observedProperty",
       "description": "the property measured or estimated by all observations in the collection"
+    },
+    "phenomenonTime": {
+      "title": "phenomenonTime",
+      "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
+    },
+    "resultTime": {
+      "title": "resultTime",
+      "description": "time at which the result became available, after all processing steps were completed",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/date-time"
     },
     "member": {
       "type": "array",
@@ -39,5 +54,6 @@
       "title": "member",
       "description": "Member of this observation collection"
     }
-  }
+  },
+  "required": [ "id" , "member" ]
 }

@@ -11,7 +11,7 @@
         "samplingTime": {
           "title": "samplingTime",
           "description": "time the specimen was taken from the sampled feature",
-          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
+          "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
         },
         "samplingMethod": {
           "title": "samplingMethod",
@@ -55,7 +55,5 @@
     "currentLocation": {},
     "size": {}
   },
-  "required": [
-    "id","type","sampledFeature","samplingTime"
-  ]
+  "required": [ "id","sampledFeature","samplingTime" ]
 }

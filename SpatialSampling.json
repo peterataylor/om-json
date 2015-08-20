@@ -32,11 +32,6 @@
     "shape": {},
     "hostedProcedure": {}
   },
- "additionalProperties" : false,
-  "required": [
-    "id",
-    "type",
-    "sampledFeature",
-    "shape"
-  ]
+  "additionalProperties" : false,
+  "required": [ "id", "sampledFeature", "shape" ]
 }
