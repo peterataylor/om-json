@@ -8,7 +8,7 @@
             "description": "A single position",
             "type": "array",
             "minItems": 2,
-            "items": [ { "type": "number" }, { "type": "number" } ],
+            "items": [ { "type": "number" } ],
             "additionalItems": false
         },
         "positionArray": {
@@ -96,12 +96,24 @@
                       }
                   },
                   "required": [ "type", "coordinates" ]
+              },
+              {
+                  "title": "GeometryCollection",
+                  "type": "object",
+                  "properties": {
+                      "type": { "enum": [ "GeometryCollection" ] },
+                      "geometries": {
+                          "type": "array",
+                          "items": { "$ref": "#/definitions/geometryObject" }
+                      }
+                  },
+                  "required": [ "type", "geometries" ]
               }
           ]
         }
     },
     "properties": {
-        "geometry": { "$ref": "#/definitions/geometryObject"},
-        "required": [ "geometry" ]        
-    }
+        "geometry": { "$ref": "#/definitions/geometryObject"}        
+    },
+    "required": [ "geometry" ]
 }
