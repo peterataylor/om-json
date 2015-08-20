@@ -43,7 +43,7 @@
     "resultTime": {
       "title": "resultTime",
       "description": "time at which the result became available, after all processing steps were completed",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/date-time"
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/dateTimePosition"
     },
     "context": {
       "title": "context",
@@ -53,7 +53,17 @@
     },
     "result": {
       "title": "result",
-      "description": "result of the observation"
+      "description": "result of the observation",
+      "oneOf": [
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"             },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"          },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabTerm"        },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/truth"            },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/count"            },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalObject" },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject" },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesTVP.json#/definitions/TimeseriesTVP" }
+      ]
     }
   },
   "required": [ "id", "phenomenonTime", "result" ],

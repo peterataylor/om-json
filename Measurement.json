@@ -9,7 +9,7 @@
   ],
   "properties": {
     "id": { },
-    "type": "Measurement" ,
+    "type": { "enum": [ "Measurement" ] } ,
     "phenomenonTime": { },
     "observedProperty": { },
     "procedure": { },
