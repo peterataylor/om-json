@@ -4,10 +4,6 @@
   "title": "Sampling feature collection",
   "description": "Collection of features on which observations may be made.",
   "type": "object",
-  "required": [
-    "id",
-    "member"
-  ],
   "properties": {
     "id": {
       "title": "id",
@@ -29,5 +25,6 @@
       "title": "member",
       "description": "Member of this sampling feature collection"
     }
-  }
+  },
+  "required": [ "id", "member" ]
 }

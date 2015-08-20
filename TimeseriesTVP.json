@@ -11,7 +11,7 @@
       "properties" : {
         "time": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
         },
         "value": {
           "type":"object",
@@ -30,11 +30,11 @@
       "properties" : {
         "time": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/temporalPrimitive"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
         },
         "value": {
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/text"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabTerm"
         }
       },
       "additionalProperties":"false"
@@ -78,8 +78,6 @@
           "$ref": "#/definitions/TimeseriesTVP"
       }
   },
-  "required": [
-     "value"
-  ],
+  "required": [ "value" ],
   "additionalProperties": false
 }
