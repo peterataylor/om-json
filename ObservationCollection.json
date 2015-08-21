@@ -15,24 +15,27 @@
       "type": "string"
     },
     "procedure": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
       "title": "featureOfInterest",
-      "description": "the observation procedure used in all observations in the collection"
-    },
+      "description": "the observation procedure used in all observations in the collection",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
+   },
     "featureOfInterest": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
       "title": "featureOfInterest",
-      "description": "the single feature which all observations in the collection are concerned with"
+      "description": "the single feature which all observations in the collection are concerned with",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "samplingStrategy": {
       "title": "samplingStrategy",
       "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject"
+      "oneOf": [
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" }     
+      ]
     },
     "observedProperty": {
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject",
       "title": "observedProperty",
-      "description": "the property measured or estimated by all observations in the collection"
+      "description": "the property measured or estimated by all observations in the collection",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "phenomenonTime": {
       "title": "phenomenonTime",
@@ -52,17 +55,20 @@
     "vocabulary": { 
       "title": "vocabulary", 
       "description": "vocabulary for all categorical result values",
-      "type": "string" 
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "member": {
+      "title": "member",
+      "description": "Member of this observation collection",
       "type": "array",
       "items": {
-        "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject"
+        "oneOf": [
+          { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
+          { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Observation.json" }
+        ]
       },
       "minItems": 1,
-      "uniqueItems": true,
-      "title": "member",
-      "description": "Member of this observation collection"
+      "uniqueItems": true
     }
   },
   "required": [ "id" , "member" ]

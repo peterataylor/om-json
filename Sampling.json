@@ -18,20 +18,18 @@
     "sampledFeature": {
       "title": "sampledFeature",
       "description": "the feature which the sampling feature was designed to sample",
-      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/linkOrObject"
-    },
-    "relatedObservation": {
-      "title": "relatedObservation",
-      "description": "Observation that uses this sampling feature",
       "type": "array",
-      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" }
+      "items": {  "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "complex": {
       "title": "complex",
       "description": "link to related sampling features",
       "type": "array",
-      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" }
+      "items": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
+      "minItems": 1
     }
   },
-  "required": [ "id", "sampledFeature" ]
+  "required": [ "id" ]
 }

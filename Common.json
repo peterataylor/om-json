@@ -48,13 +48,6 @@
       },
       "required": [ "href" ],
       "additionalProperties":false
-    },
-    "linkOrObject": {
-      "title": "linkOrObject",
-      "anyOf": [
-        { "$ref": "#/definitions/link" },
-        { "type": "object"             }
-      ]
     }
   }
 }
