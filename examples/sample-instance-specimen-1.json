@@ -6,45 +6,16 @@
     "title": "test feature A"
   },
   "complex": [
-    {
-      "rel": "http://example.org/parent",
-      "href": "http://example.org/sample2"
-    },
-    {
-      "rel": "http://example.org/child",
-      "href": "http://example.org/sample3"
-    }
+    { "rel": "http://example.org/parent", "href": "http://example.org/sample2" },
+    { "rel": "http://example.org/child",  "href": "http://example.org/sample3" }
   ],
-  "samplingTime": {
-    "instant": "2015-05-14"
-  },
+  "samplingTime": { "instant": "2015-05-14" },
   "relatedObservation": [
-    {
-      "href": "http://example.org/obs99"
-    }
+    { "href": "http://example.org/obs99" }
   ],
   "samplingLocation": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          -180,
-          10
-        ],
-        [
-          20,
-          90
-        ],
-        [
-          180,
-          -5
-        ],
-        [
-          -30,
-          -90
-        ]
-      ]
-    ]
+    "type": "Point",
+    "coordinates": [  -30,  -90 ]
   },
   "currentLocation": {
     "href": "http://example.org/locations/store",

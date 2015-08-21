@@ -6,19 +6,16 @@
     "title": "test feature A"
   },
   "complex": [
-    { "rel": "http://example.org/parent", "href": "http://example.org/sample2" },
-    { "rel": "http://example.org/child",  "href": "http://example.org/sample3" }
+    { "rel": "http://example.org/child",  "href": "http://example.org/pixel3" }
   ],
   "shape": {
     "type": "Polygon",
-    "coordinates": [
-      [
+    "coordinates": [ [
         [ -180,   10 ],
         [   20,   90 ],
         [  180,   -5 ],
         [  -30,  -90 ]
-      ]
-    ]
+    ] ]
   },
   "hostedProcedure": [
     { "href": "http://example.org/sensor99" },

@@ -13,6 +13,6 @@
   "featureOfInterest": {
     "href": "http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"
   },
-  "resultTime": { "instant": "2011-05-12T09:00:00+10:00" },
+  "resultTime": "2011-05-12T09:00:00+10:00" ,
   "result": true 
 }

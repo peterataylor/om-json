@@ -1,0 +1,19 @@
+{
+  "id": "observation collection a34",
+  "phenomenonTime": { "instant":"2015-05-11" },
+  "member": [
+    { "href": "http://example.org/o23" },
+    {
+      "id":"o96",
+      "type": "CategoryObservation",
+      "observedProperty": { "href": "http://environment.data.gov.au/def/property/taxon" },
+      "procedure": { "href":"http://www.opengis.net/def/waterml/2.0/processType/Manual" },
+      "featureOfInterest": { "href":"http://example.org/sighting345" },
+      "resultTime": "2015-05-12T09:00:00+10:00",
+      "result": {
+        "term": "johnstons-crocodile" ,
+        "vocabulary": "http://environment.data.gov.au/def/object/"
+      } 
+    }
+  ]
+}
