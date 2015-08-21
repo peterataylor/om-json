@@ -23,6 +23,7 @@
           "description": "Location from which the specimen was taken within the sampled feature",
           "oneOf": [
             { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"           },
+            { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/text"           },
             { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject" }
           ]
         },
@@ -55,5 +56,5 @@
     "currentLocation": {},
     "size": {}
   },
-  "required": [ "id","sampledFeature","samplingTime" ]
+  "required": [ "id","samplingTime" ]
 }
