@@ -64,6 +64,7 @@
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/vocabTerm"        },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/truth"            },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/count"            },
+        { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/text"            },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalObject" },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject" },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesTVP.json#/definitions/TimeseriesTVP" }
