@@ -3,14 +3,14 @@
 This repository contains JSON schema for encoding Observations & Measurements (O&M) in JSON. 
 
 Main observation schema: [Observation](https://github.com/peterataylor/om-json/blob/master/Observation.json)
-   * [Truth observation example](https://github.com/peterataylor/om-json/blob/master/observation-boolean-1.json)
-   * [Measurement observation example](https://github.com/peterataylor/om-json/blob/master/observation-measure-1.json)
-   * [Timeseries observation example](https://github.com/peterataylor/om-json/blob/master/observation-timeseries-measure-1.json)
-   * [Geometry (polygon) observation example](https://github.com/peterataylor/om-json/blob/master/observation-geometry-polygon-1.json)
-   * [Geometry (linestring) observation example](https://github.com/peterataylor/om-json/blob/master/observation-geometry-linestring-1.json)
-   * [Specimen example](https://github.com/peterataylor/om-json/blob/master/sample-specimen-1.json)
-   * [Simple sample example](https://github.com/peterataylor/om-json/blob/master/sample-simple-1.json)
-   * [Sample collection example](https://github.com/peterataylor/om-json/blob/master/sample-collection-1.json)
+   * [Truth observation example](https://github.com/peterataylor/om-json/blob/master/examples/observation-boolean-1.json)
+   * [Measurement observation example](https://github.com/peterataylor/om-json/blob/master/examples/observation-measure-1.json)
+   * [Timeseries observation example](https://github.com/peterataylor/om-json/blob/master/examples/observation-timeseries-measure-1.json)
+   * [Geometry (polygon) observation example](https://github.com/peterataylor/om-json/blob/master/examples/observation-geometry-polygon-1.json)
+   * [Geometry (linestring) observation example](https://github.com/peterataylor/om-json/blob/master/examples/observation-geometry-linestring-1.json)
+   * [Specimen example](https://github.com/peterataylor/om-json/blob/master/examples/sample-specimen-1.json)
+   * [Simple sample example](https://github.com/peterataylor/om-json/blob/master/examples/sample-simple-1.json)
+   * [Sample collection example](https://github.com/peterataylor/om-json/blob/master/examples/sample-collection-1.json)
 
 ## Tools
 
