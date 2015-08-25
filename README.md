@@ -1,11 +1,13 @@
-# Observations & Measurements JSON encoding
+# Observations & Measurements (O&M) JSON encoding
 
-This repository contains JSON schema for encoding Observations & Measurements in JSON. 
+This repository contains JSON schema for encoding Observations & Measurements (O&M) in JSON. 
 
 Main observation schema: [Observation](https://github.com/peterataylor/om-json/blob/master/Observation.json)
-   * [Truth observation example](https://github.com/peterataylor/om-json/blob/master/observation-instance-example-boolean.json)
-   * [Measurement observation example](https://github.com/peterataylor/om-json/blob/master/observation-instance-example-measure.json)
-   * [Geometry (polygon) observation example](https://github.com/peterataylor/om-json/blob/master/observation-instance-example-geometry-polygon.json)
+   * [Truth observation example](https://github.com/peterataylor/om-json/blob/master/observation-boolean-1.json)
+   * [Measurement observation example](https://github.com/peterataylor/om-json/blob/master/observation-measure-1.json)
+   * [Geometry (polygon) observation example](https://github.com/peterataylor/om-json/blob/master/observation-geometry-polygon-1.json)
+   * [Geometry (linestring) observation example](https://github.com/peterataylor/om-json/blob/master/observation-geometry-linestring-1.json)
+   * [Specimen example](https://github.com/peterataylor/om-json/blob/master/sample-specimen-1.json)
 
 ## Tools
 
