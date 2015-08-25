@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://waterml2.csiro.au/om-json/sampling-collection.json",
+  "id": "http://raw.githubusercontent.com/peterataylor/om-json/master/SamplingCollection.json",
   "title": "Sampling feature collection",
   "description": "Collection of features on which observations may be made.",
   "type": "object",
@@ -25,7 +25,9 @@
       "items": {
         "oneOf": [
           { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
-          { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" }
+          { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" },
+          { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Specimen.json" },
+          { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/SpatialSampling.json" }
         ]
       },
       "minItems": 1,
