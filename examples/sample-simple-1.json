@@ -1,0 +1,23 @@
+{
+  "id": "sample1",
+  "type": "basic",
+  "sampledFeature": {
+    "href": "http://example.org/featureA",
+    "title": "test feature A"
+  },
+  "complex": [
+    {
+      "role": "http://example.org/parent",
+      "relatedSamplingFeature": "http://example.org/sample2"
+    },
+    {
+      "role": "http://example.org/child",
+      "relatedSamplingFeature": "http://example.org/sample3"
+    }
+  ],
+  "relatedObservation": [
+    {
+      "href": "http://example.org/obs99"
+    }
+  ]
+}

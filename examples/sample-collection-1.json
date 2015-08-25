@@ -1,0 +1,22 @@
+{
+  "id": "sampling feature collection 77",
+  "member": [
+    { "href": "http://example.org/sample23" },
+    { 
+      "id": "spec56",
+      "type": "Specimen",
+      "samplingTime": { "instant": "2015-05-14" },
+      "samplingLocation": {
+        "type": "Point",
+        "coordinates": [  -30,  -90 ]
+      },
+      "size": {
+        "value": 2,
+        "uom": "l"
+      }
+    }
+  ],
+  "sampledFeature": [ 
+    { "href": "http://example.org/feature45", "title": "Derwent River" } 
+  ]
+}
