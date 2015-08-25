@@ -27,10 +27,7 @@
     "dateTimePosition": {
       "title": "dateTime",
       "oneOf": [
-        { "$ref": "#/definitions/date-time" },
-        { "$ref": "#/definitions/date" },
-        { "$ref": "#/definitions/g-year-month" },
-        { "$ref": "#/definitions/g-year" }
+        { "$ref": "#/definitions/date-time" }
       ]
     },
     "dateTimeInstant": {
