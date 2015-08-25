@@ -23,7 +23,7 @@
       "description": "Member of this sampling feature collection",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
           { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" },
           { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Specimen.json" },
