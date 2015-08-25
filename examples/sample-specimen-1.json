@@ -1,10 +1,10 @@
 {
   "id": "spec1",
   "type": "Specimen",
-  "sampledFeature": {
+  "sampledFeature": [{
     "href": "http://example.org/featureA",
     "title": "test feature A"
-  },
+  }],
   "complex": [
     { "rel": "http://example.org/parent", "href": "http://example.org/sample2" },
     { "rel": "http://example.org/child",  "href": "http://example.org/sample3" }
