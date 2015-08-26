@@ -38,46 +38,31 @@
         }
       },
       "additionalProperties":"false"
-    },
-    "TimeseriesTVP" : {
-        "title": "TimeseriesTVP",
-        "description": "a reusable time-series with metadata",
-        "type": "object",
-        "properties": {
-            "metadata": {
-                "title": "metadata",
-                "description": "Metadata about the timeseries.",
-                "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/definitions/TimeseriesMetadata"
-            },
-            "defaultPointMetadata": {
-                "title": "defaultPointMetadata",
-                "description": "Default metadata for each point in the timeseries (can be overridden on a per-point basis).",
-                "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/definitions/PointMetadata"
-            },
-            "points": {
-                "title": "points",
-                "description": "The data points (time, value pairs) for the timeseries.",
-                "type":"array",
-                "items": {
-                    "oneOf" : [ 
-                      { "$ref": "#/definitions/TVPairMeasure" },
-                      { "$ref": "#/definitions/TVPairCategory" }
-                    ]
-                }
-            }
-        },
-        "required": [
-          "points"
-        ],
-        "additionalProperties": false
     }
   },
   "properties": {
-      "value": {
-          "type": "object",
-          "$ref": "#/definitions/TimeseriesTVP"
+    "metadata": {
+      "title": "metadata",
+      "description": "Metadata about the timeseries.",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/definitions/TimeseriesMetadata"
+    },
+    "defaultPointMetadata": {
+      "title": "defaultPointMetadata",
+      "description": "Default metadata for each point in the timeseries (can be overridden on a per-point basis).",
+      "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/TimeseriesMetadata.json#/definitions/PointMetadata"
+    },
+    "points": {
+      "title": "points",
+      "description": "The data points (time, value pairs) for the timeseries.",
+      "type":"array",
+      "items": {
+        "oneOf" : [ 
+          { "$ref": "#/definitions/TVPairMeasure" },
+          { "$ref": "#/definitions/TVPairCategory" }
+        ]
       }
+    }
   },
-  "required": [ "value" ],
+  "required": [ "points" ],
   "additionalProperties": false
 }
