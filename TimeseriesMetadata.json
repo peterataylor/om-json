@@ -12,7 +12,7 @@
         "temporalExtent": {
           "title":"temporalExtent",
           "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/dateTimePeriod"
+          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/dateTimeInterval"
         },
         "baseTime": {
           "title":"baseTime",
@@ -30,7 +30,7 @@
           "properties" : {
             "applicablePeriod" : {
               "type":"object",
-              "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/dateTimePeriod"
+              "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/dateTimeInterval"
             },
             "comment" : {
               "type" : "string"
