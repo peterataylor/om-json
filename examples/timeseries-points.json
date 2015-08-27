@@ -1,0 +1,36 @@
+{
+  "points": [
+    {
+      "time": {
+        "instant": "2010-01-01T00:00:00"
+      },
+      "value": 3.2,
+      "metadata": {
+        "quality": {
+          "term" : "suspect",
+          "vocabulary": "http://www.opengis.net/def/waterml/2.0/quality"
+          }
+      }
+    },
+    {
+      "time": {
+        "instant": "2010-01-02T00:00:00"
+      },
+      "value": 3.6
+    },
+    {
+      "time": {
+        "instant": "2010-01-03T00:00:00"
+      },
+      "value": null,
+      "metadata": {
+        "nilReason" : {
+          "term" : "missing",
+          "vocabulary": "http://www.opengis.net/def/nil/OGC/0"
+        }
+      }
+    }
+  ]
+  }
+
+
