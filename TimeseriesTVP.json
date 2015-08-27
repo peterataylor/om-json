@@ -14,8 +14,7 @@
           "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
         },
         "value": {
-          "type":"object",
-          "$ref":"http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure"
+          "type":"number"
         },
         "metadata": {
           "type":"object",
@@ -41,6 +40,11 @@
     }
   },
   "properties": {
+    "id": {
+      "title": "id",
+      "description": "Identifier for the time-series",
+      "type":"string"
+    },
     "metadata": {
       "title": "metadata",
       "description": "Metadata about the timeseries.",
@@ -63,6 +67,6 @@
       }
     }
   },
-  "required": [ "points" ],
+  "required": [ "id", "points" ],
   "additionalProperties": false
 }
