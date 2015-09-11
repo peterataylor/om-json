@@ -71,6 +71,6 @@
       ]
     }
   },
-  "required": [ "id", "phenomenonTime", "result" ],
+  "required": [ "id", "type", "result" ],
   "additionalProperties": false
 }
