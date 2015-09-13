@@ -6,18 +6,31 @@
   "procedure": {"href":"http://www.opengis.net/def/waterml/2.0/processType/Sensor"},
   "featureOfInterest": {"href":"http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"},
   "resultTime": "2015-08-05T09:00:00+10:00",
-  "result": [
-       { 
-         "time":  { "instant": "2015-08-03" },
-         "value": { "value": 3.2, "uom": "http://qudt.org/vocab/unit#DegreeCelsius" }
-       },
-       { 
-         "time":  { "instant": "2015-08-04" },
-         "value": { "value": 3.5, "uom": "http://qudt.org/vocab/unit#DegreeCelsius" }
-       },
-       { 
-         "time":  { "instant": "2015-08-05" }, 
-         "value": { "value": 3.6, "uom": "http://qudt.org/vocab/unit#DegreeCelsius" }
-       }
-     ]
+  "result": {
+    "metadata": {
+    },
+    "defaultPointMetadata": {
+      "interpolationType": {
+        "href": "http://www.opengis.net/def/waterml/2.0/interpolationType/Continuous"
+      },
+      "quality": {
+        "href": "http://www.opengis.net/def/waterml/2.0/quality/unchecked"
+      },
+      "uom" : "http://qudt.org/vocab/unit#DegreeCelsius"
+    },
+    "points": [
+      { 
+        "time":  { "instant": "2015-08-03" },
+        "value": 3.2
+      },
+      { 
+        "time":  { "instant": "2015-08-04" },
+        "value": 3.5 
+      },
+      { 
+        "time":  { "instant": "2015-08-05" }, 
+        "value": 3.6
+      }
+    ]
+  }
 }
