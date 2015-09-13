@@ -31,7 +31,7 @@
     },
     "samplingStrategy": {
       "title": "samplingStrategy",
-      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest",
+      "description": "a strategy, such as a sampling feature, which mediates between the procedure and the ultimate feature of interest for all observations in the collection",
       "oneOf": [
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link" },
         { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Sampling.json" }     
@@ -44,22 +44,22 @@
     },
     "phenomenonTime": {
       "title": "phenomenonTime",
-      "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest",
+      "description": "Time at which the estimate of the property that is the result of the observation is associated with the feature of interest for all observations in the collection",
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/temporalPrimitive"
     },
     "resultTime": {
       "title": "resultTime",
-      "description": "time at which the result became available, after all processing steps were completed",
+      "description": "time at which the result became available, after all processing steps were completed, for all observations in the collection",
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Temporal.json#/definitions/date-time"
     },
     "uom": { 
       "title": "unit-of-measure", 
-      "description": "unit of measure for all quantitative result values",
+      "description": "unit of measure for all quantitative result values for observations in the collection",
       "type": "string" 
     },
     "vocabulary": { 
       "title": "vocabulary", 
-      "description": "vocabulary for all categorical result values",
+      "description": "vocabulary for all categorical result valuesfor observations in the collection",
       "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"
     },
     "member": {
