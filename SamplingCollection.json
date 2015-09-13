@@ -10,6 +10,11 @@
       "description": "A unique identifier for the sampling feature collection",
       "type": "string"
     },
+    "type": {
+      "title": "type",
+      "description": "Identifies the type of object",
+      "type": "enum"
+    },
     "sampledFeature": {
       "title": "sampledFeature",
       "description": "the feature which the sampling feature collection was designed to sample",
