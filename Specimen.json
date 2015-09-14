@@ -27,6 +27,15 @@
             { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Geometry.json#/definitions/geometryObject" }
           ]
         },
+        "samplingElevation": {
+          "title": "samplingElevation",
+          "description": "Elevation from which the specimen was taken at the sampling location",
+          "properties": {
+              "elevation":     { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/measure" },
+              "verticalDatum": { "$ref": "http://raw.githubusercontent.com/peterataylor/om-json/master/Common.json#/definitions/link"    }
+          },
+          "required": [ "elevation"]
+        },
         "currentLocation": {
           "title": "currentLocation",
           "description": "Location where the specimen is currently",
@@ -53,6 +62,7 @@
     "samplingTime": {},
     "samplingMethod": {},
     "samplingLocation": {},
+    "samplingElevation": {},
     "currentLocation": {},
     "size": {}
   },
