@@ -45,6 +45,11 @@
       "description": "Identifier for the time-series",
       "type":"string"
     },
+   "type": {
+      "title": "type",
+      "description": "Identifies the type of time-series",
+      "type": "string"
+    },
     "metadata": {
       "title": "metadata",
       "description": "Metadata about the timeseries.",
